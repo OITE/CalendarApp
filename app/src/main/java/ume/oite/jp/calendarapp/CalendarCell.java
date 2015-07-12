@@ -121,7 +121,7 @@ public class CalendarCell implements OnTouchListener{
         if(event.getActionMasked()==MotionEvent.ACTION_DOWN){
             if(cellManager.getSelectCell()!=null)if(cellManager.getSelectCell()==this){
                 editScheduleDialog.setDate(this.calendar);
-                editScheduleDialog.show(nowActivity.getFragmentManager(), "contact_us");
+                editScheduleDialog.show(nowActivity.getSupportFragmentManager(), "contact_us");
             }
             cellManager.changeSelect(cellManager.indexOf(this));
         }

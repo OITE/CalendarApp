@@ -5,13 +5,13 @@ package ume.oite.jp.calendarapp;
  */
 
 
-import android.app.ListFragment;
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.support.v4.app.ListFragment;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -31,6 +31,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
+
 
 /************************************************************
  * Task_Fragmentクラス<br>
@@ -224,7 +225,7 @@ public class TaskFragment extends ListFragment{
             }
         });
         dialogFragment.setEditText(editText);
-        dialogFragment.show(getFragmentManager(), "dialog_fragment");
+        dialogFragment.show(this.getFragmentManager(), "dialog_fragment");
     }
 
 

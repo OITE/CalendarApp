@@ -1,57 +1,60 @@
 package ume.oite.jp.calendarapp;
 
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.util.SparseArrayCompat;
+import android.support.v4.view.ViewPager;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.MotionEvent;
-import android.view.View;
-import android.view.View.OnTouchListener;
 import android.widget.Button;
 
+import java.util.ArrayList;
+import java.util.Calendar;
 /*
- * ‚±‚ÌƒAƒvƒŠ‚ÍˆÈ‰º‚ÌƒTƒCƒg‚ğQl‚É‚µ‚Ü‚µ‚½B
+ * ã“ã®ã‚¢ãƒ—ãƒªã¯ä»¥ä¸‹ã®ã‚µã‚¤ãƒˆã‚’å‚è€ƒã«ã—ã¾ã—ãŸã€‚
  * http://dangoya.jp/?p=302
  *
- * ”~ƒƒ‚ (XV)
- * E@ƒ^ƒXƒN@F@ƒJƒŒƒ“ƒ_[‚Ì—\’è‚Ì‚±‚ÆB
- * E@ƒXƒPƒWƒ…[ƒ‹@F@ƒ^ƒXƒN‚Ì‚±‚ÆB
- * E@ƒtƒ‰ƒOƒƒ“ƒg@F@ƒJƒŒƒ“ƒ_[•”•ª‚Æƒ^ƒXƒN•”•ª‚É•ª‚¯‚Ä‚ ‚éB
- * E@ƒAƒ_ƒvƒ^@F@‚±‚êŠÖ˜A‚í‚©‚ç‚È‚¢B
+ * æ¢…ãƒ¡ãƒ¢ (éšæ™‚æ›´æ–°)
+ * ãƒ»ã€€ã‚¿ã‚¹ã‚¯ã€€ï¼šã€€ã‚«ãƒ¬ãƒ³ãƒ€ãƒ¼ã®äºˆå®šã®ã“ã¨ã€‚
+ * ãƒ»ã€€ã‚¹ã‚±ã‚¸ãƒ¥ãƒ¼ãƒ«ã€€ï¼šã€€ã‚¿ã‚¹ã‚¯ã®ã“ã¨ã€‚
+ * ãƒ»ã€€ãƒ•ãƒ©ã‚°ãƒ¡ãƒ³ãƒˆã€€ï¼šã€€ã‚«ãƒ¬ãƒ³ãƒ€ãƒ¼éƒ¨åˆ†ã¨ã‚¿ã‚¹ã‚¯éƒ¨åˆ†ã«åˆ†ã‘ã¦ã‚ã‚‹ã€‚
+ * ãƒ»ã€€ã‚¢ãƒ€ãƒ—ã‚¿ã€€ï¼šã€€ã“ã‚Œé–¢é€£ã‚ã‹ã‚‰ãªã„ã€‚
  */
 
 
 /************************************************************
- * MainActivityƒNƒ‰ƒX<br>
+ * MainActivityã‚¯ãƒ©ã‚¹<br>
  * <br>
- * ƒAƒvƒŠ‚ÌƒƒCƒ“‚Æ‚È‚éƒAƒNƒeƒBƒrƒeƒB[B<br>
- * ‚±‚±‚ªŠeFragment‚ğ¶¬‚µŠÇ—‚·‚éB<br>
- * ‚Ü‚½Aƒ^ƒXƒN‚Ì•ÒW‚âíœ‚Æ‚È‚éƒƒ\ƒbƒh‚ª—pˆÓ‚³‚ê‚Ä‚¢‚éB<br>
+ * ã‚¢ãƒ—ãƒªã®ãƒ¡ã‚¤ãƒ³ã¨ãªã‚‹ã‚¢ã‚¯ãƒ†ã‚£ãƒ“ãƒ†ã‚£ãƒ¼ã€‚<br>
+ * ã“ã“ãŒå„Fragmentã‚’ç”Ÿæˆã—ç®¡ç†ã™ã‚‹ã€‚<br>
+ * ã¾ãŸã€ã‚¿ã‚¹ã‚¯ã®ç·¨é›†ã‚„å‰Šé™¤ã¨ãªã‚‹ãƒ¡ã‚½ãƒƒãƒ‰ãŒç”¨æ„ã•ã‚Œã¦ã„ã‚‹ã€‚<br>
  *
  * @author FuyukiUmeta
  ************************************************************/
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends FragmentActivity {
 
-    //ƒ^ƒXƒN‚Ìƒtƒ‰ƒOƒƒ“ƒg
+    //ã‚¿ã‚¹ã‚¯ã®ãƒ•ãƒ©ã‚°ãƒ¡ãƒ³ãƒˆ
     public static TaskFragment listFragment = new TaskFragment();
-    //ƒJƒŒƒ“ƒ_[‚Ìƒtƒ‰ƒOƒƒ“ƒg
+    //ã‚«ãƒ¬ãƒ³ãƒ€ãƒ¼ã®ãƒ•ãƒ©ã‚°ãƒ¡ãƒ³ãƒˆ
     CalendarFragment calendarFragment = new CalendarFragment();
+    //ViewPager
+    ViewPager viewPager ;
 
     /************************************************************
-     * onCreateƒƒ\ƒbƒh<br>
-     * Šeƒtƒ‰ƒOƒƒ“ƒg‚ğ•\¦‚·‚éB
+     * onCreateãƒ¡ã‚½ãƒƒãƒ‰<br>
+     * å„ãƒ•ãƒ©ã‚°ãƒ¡ãƒ³ãƒˆã‚’è¡¨ç¤ºã™ã‚‹ã€‚
      ************************************************************/
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //ŒˆÚ“®ƒ{ƒ^ƒ“‚ÌƒCƒ“ƒXƒ^ƒ“ƒX¶¬
+        //æœˆç§»å‹•ãƒœã‚¿ãƒ³ã®ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ç”Ÿæˆ
         Button nextButton = (Button)this.findViewById(R.id.nextButton);
         Button prevButton = (Button)this.findViewById(R.id.prevButton);
 
-        //Ÿ‚ÌŒ•\¦ƒ{ƒ^ƒ“@‚Ì@ƒŠƒXƒi
+        /*
+        //æ¬¡ã®æœˆè¡¨ç¤ºãƒœã‚¿ãƒ³ã€€ã®ã€€ãƒªã‚¹ãƒŠ
         nextButton.setOnTouchListener(new OnTouchListener(){
             public boolean onTouch(View v, MotionEvent event) {
                 if(event.getActionMasked()==MotionEvent.ACTION_DOWN){
@@ -61,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             }
         });
-        //‘O‚ÌŒ•\¦ƒ{ƒ^ƒ“@‚Ì@ƒŠƒXƒi
+        //å‰ã®æœˆè¡¨ç¤ºãƒœã‚¿ãƒ³ã€€ã®ã€€ãƒªã‚¹ãƒŠ
         prevButton.setOnTouchListener(new OnTouchListener(){
             public boolean onTouch(View v, MotionEvent event) {
                 if(event.getActionMasked()==MotionEvent.ACTION_DOWN){
@@ -72,22 +75,47 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        //ƒtƒ‰ƒOƒƒ“ƒg‚ğ•\¦‚³‚¹‚éB
-        FragmentManager fm = getFragmentManager();
-        FragmentTransaction ft = fm.beginTransaction();
-        ft.add(R.id.fragment_container1, calendarFragment, "calendar_fragment");
-        ft.add(R.id.fragment_container2, listFragment,"task_fragment");
-        ft.commit();
+        */
+        viewPager = (ViewPager)this.findViewById(R.id.calendar_viewpager);
+
+        //ãƒ•ãƒ©ã‚°ãƒ¡ãƒ³ãƒˆã‚’è¡¨ç¤ºã•ã›ã‚‹ã€‚
+        FragmentManager fm = this.getSupportFragmentManager();
+
+        CalendarPagerAdapter adapter = new CalendarPagerAdapter(fm);
+        adapter.addAll(getDateList());
+
+        viewPager.setAdapter(adapter);
+
+        //FragmentTransaction ft = fm.beginTransaction();
+        //ft.add(R.id.fragment_container1, calendarFragment, "calendar_fragment");
+        //ft.add(R.id.fragment_container2, listFragment,"task_fragment");
+        //ft.commit();
     }
 
-    //ƒIƒvƒVƒ‡ƒ“ƒƒjƒ…[i–¢İ’èj
+    private ArrayList<SparseArrayCompat<Integer>> getDateList(){
+        ArrayList<SparseArrayCompat<Integer>> list = new ArrayList<SparseArrayCompat<Integer>>();
+
+        Calendar c = Calendar.getInstance();
+        c.add(Calendar.YEAR,-1);
+
+        for(int i=0;i<36;i++){
+            SparseArrayCompat<Integer> item = new SparseArrayCompat<Integer>();
+            item.append(0,c.get(Calendar.YEAR));
+            item.append(1,c.get(Calendar.MONTH));
+            list.add(item);
+            c.add(Calendar.MONTH,+1);
+        }
+        return list;
+    }
+
+    //ã‚ªãƒ—ã‚·ãƒ§ãƒ³ãƒ¡ãƒ‹ãƒ¥ãƒ¼ï¼ˆæœªè¨­å®šï¼‰
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
 
-    //ƒIƒvƒVƒ‡ƒ“ƒƒjƒ…[‚Ì‘I‘ği–¢İ’èj
+    //ã‚ªãƒ—ã‚·ãƒ§ãƒ³ãƒ¡ãƒ‹ãƒ¥ãƒ¼ã®é¸æŠï¼ˆæœªè¨­å®šï¼‰
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long

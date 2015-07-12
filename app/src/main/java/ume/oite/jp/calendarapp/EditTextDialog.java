@@ -6,36 +6,36 @@ package ume.oite.jp.calendarapp;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
-import android.app.DialogFragment;
+import android.support.v4.app.DialogFragment;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.widget.EditText;
 
 /************************************************************
- * EditTextDialogƒNƒ‰ƒX<br>
+ * EditTextDialogã‚¯ãƒ©ã‚¹<br>
  * <br>
- * ƒRƒsƒy‚È‚Ì‚Å–¢”cˆ¬<br>
+ * ã‚³ãƒ”ãƒšãªã®ã§æœªæŠŠæ¡<br>
  * @author FuyukiUmeta
  ************************************************************/
 public class EditTextDialog extends DialogFragment {
 
-    //OKƒ{ƒ^ƒ“‚ğƒNƒŠƒbƒN‚µ‚½‚ÌƒŠƒXƒi
+    //OKãƒœã‚¿ãƒ³ã‚’ã‚¯ãƒªãƒƒã‚¯ã—ãŸæ™‚ã®ãƒªã‚¹ãƒŠ
     private DialogInterface.OnClickListener okClickListener = null;
 
-    //Cancelƒ{ƒ^ƒ“‚ğƒNƒŠƒbƒN‚µ‚½‚ÌƒŠƒXƒi
+    //Cancelãƒœã‚¿ãƒ³ã‚’ã‚¯ãƒªãƒƒã‚¯ã—ãŸæ™‚ã®ãƒªã‚¹ãƒŠ
     private DialogInterface.OnClickListener cancelClickListener = null;
 
-    //EditTextŒ^‚ÌƒCƒ“ƒXƒ^ƒ“ƒX
+    //EditTextå‹ã®ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹
     private EditText editText;
 
 
     /************************************************************
-     * newInstanceƒƒ\ƒbƒh<br>
-     * newInstanceƒƒ\ƒbƒh‚Å‚µ‚©V‚µ‚¢ƒIƒuƒWƒFƒNƒg‚ğì¬‚Å‚«‚È‚­‚µ‚Ä‚¢‚éB<br>
+     * newInstanceãƒ¡ã‚½ãƒƒãƒ‰<br>
+     * newInstanceãƒ¡ã‚½ãƒƒãƒ‰ã§ã—ã‹æ–°ã—ã„ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’ä½œæˆã§ããªãã—ã¦ã„ã‚‹ã€‚<br>
      ************************************************************/
     public static EditTextDialog newInstance(String title, String message) {
 
-        //V‚½‚Èƒtƒ‰ƒOƒƒ“ƒg‚ğì¬
+        //æ–°ãŸãªãƒ•ãƒ©ã‚°ãƒ¡ãƒ³ãƒˆã‚’ä½œæˆ
         EditTextDialog fragment = new EditTextDialog();
         Bundle args = new Bundle();
         args.putString("title", title);
@@ -46,17 +46,17 @@ public class EditTextDialog extends DialogFragment {
     }
 
     /************************************************************
-     * onCreateDialogƒƒ\ƒbƒh<br>
-     * ƒ_ƒCƒAƒƒO‚ğì¬‚·‚éB<br>
+     * onCreateDialogãƒ¡ã‚½ãƒƒãƒ‰<br>
+     * ãƒ€ã‚¤ã‚¢ãƒ­ã‚°ã‚’ä½œæˆã™ã‚‹ã€‚<br>
      ************************************************************/
     public Dialog onCreateDialog(Bundle safedInstanceState) {
 
-        //ƒ^ƒCƒgƒ‹‚ÆƒƒbƒZ[ƒWH
+        //ã‚¿ã‚¤ãƒˆãƒ«ã¨ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ï¼Ÿ
         String title = getArguments().getString("title");
         String message = getArguments().getString("message");
 
-        //ƒAƒ‰[ƒgƒ_ƒCƒAƒƒO‚ğ¶¬H
-        //‚»‚±‚ÉeditText‚âƒ{ƒ^ƒ“‚ÌƒŠƒXƒi‚ğİ’èH
+        //ã‚¢ãƒ©ãƒ¼ãƒˆãƒ€ã‚¤ã‚¢ãƒ­ã‚°ã‚’ç”Ÿæˆï¼Ÿ
+        //ãã“ã«editTextã‚„ãƒœã‚¿ãƒ³ã®ãƒªã‚¹ãƒŠã‚’è¨­å®šï¼Ÿ
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         builder.setTitle(title)
                 .setMessage(message)
@@ -68,26 +68,28 @@ public class EditTextDialog extends DialogFragment {
     }
 
     /************************************************************
-     * setOnOkClickListenerƒƒ\ƒbƒh<br>
-     * OKƒ{ƒ^ƒ“‚ğ‚¨‚µ‚½‚ÌƒŠƒXƒi‚ğ•Ô‹p<br>
+     * setOnOkClickListenerãƒ¡ã‚½ãƒƒãƒ‰<br>
+     * OKãƒœã‚¿ãƒ³ã‚’ãŠã—ãŸæ™‚ã®ãƒªã‚¹ãƒŠã‚’è¿”å´<br>
      ************************************************************/
     public void setOnOkClickListener(DialogInterface.OnClickListener listener) {
         this.okClickListener = listener;
     }
 
     /************************************************************
-     * setOnCancelClickListenerƒƒ\ƒbƒh<br>
-     * Cancelƒ{ƒ^ƒ“‚ğ‚¨‚µ‚½‚ÌƒŠƒXƒi‚ğ•Ô‹p<br>
+     * setOnCancelClickListenerãƒ¡ã‚½ãƒƒãƒ‰<br>
+     * Cancelãƒœã‚¿ãƒ³ã‚’ãŠã—ãŸæ™‚ã®ãƒªã‚¹ãƒŠã‚’è¿”å´<br>
      ************************************************************/
     public void setOnCancelClickListener(DialogInterface.OnClickListener listener) {
         this.cancelClickListener = listener;
     }
 
     /************************************************************
-     * setEditTextƒƒ\ƒbƒh<br>
-     * editText‚ğİ’è‚·‚éB<br>
+     * setEditTextãƒ¡ã‚½ãƒƒãƒ‰<br>
+     * editTextã‚’è¨­å®šã™ã‚‹ã€‚<br>
      ************************************************************/
     public void setEditText(EditText editText) {
         this.editText = editText;
     }
+
+
 }

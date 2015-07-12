@@ -1,6 +1,6 @@
 package ume.oite.jp.calendarapp;
 
-import android.app.Fragment;
+import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -29,23 +29,21 @@ public class CalendarFragment extends Fragment{
     public static int year=0,month=0;
 
     /************************************************************
-     * コンストラクタ<br>
-     * drawableの設定を行う。<br>
-     ************************************************************/
-    CalendarFragment(){
-
-    }
-
-    /************************************************************
      * onCreateViewメソッド<br>
      * カレンダーの各セルの設定を行う。<br>
      ************************************************************/
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
+        Bundle bundle = getArguments();
+        int year = bundle.getInt("year");
+        int month = bundle.getInt("month");
+
         //レイアウトファイルをView型に変換する
         calendarLayout = inflater.inflate(R.layout.fragment_calendar,container,false);
+
         //カレンダーを初期化（現在の年月日にする。）
         updateCalendar(0);
+        update_setCalendar(year,month);
 
         return calendarLayout;
     }
@@ -107,6 +105,8 @@ public class CalendarFragment extends Fragment{
     }
 
     public void update_setCalendar(int year,int month){
+        TextView dateText = (TextView)this.getActivity().findViewById(R.id.DateField);
+        dateText.setText((this.year=calendar.get(Calendar.YEAR))+"年　"+(this.month=(calendar.get(Calendar.MONTH)+1))+"月");
         int plus_year  = year-calendar.get(Calendar.YEAR);
         int plus_month = month-calendar.get(Calendar.MONTH) + plus_year*12;
         this.updateCalendar(plus_month);

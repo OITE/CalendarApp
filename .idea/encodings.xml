@@ -7,6 +7,8 @@
     <file url="file://$PROJECT_DIR$/app/src/main/java/ume/oite/jp/calendarapp/CellManager.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/ume/oite/jp/calendarapp/DatabaseHelper.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/ume/oite/jp/calendarapp/EditScheduleDialog.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/ume/oite/jp/calendarapp/EditTextDialog.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/ume/oite/jp/calendarapp/MainActivity.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/ume/oite/jp/calendarapp/TaskFragment.java" charset="UTF-8" />
   </component>
 </project>
