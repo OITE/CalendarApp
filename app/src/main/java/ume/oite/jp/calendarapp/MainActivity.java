@@ -11,38 +11,23 @@ import android.view.MenuItem;
 import java.util.ArrayList;
 import java.util.Calendar;
 
-/************************************************************
- * MainActivityクラス<br>
- * <br>
- * アプリのメインとなるアクティビティー。<br>
- * ここが各Fragmentを生成し管理する。<br>
- * また、タスクの編集や削除となるメソッドが用意されている。<br>
- *
- * @author FuyukiUmeta
- ************************************************************/
 public class MainActivity extends FragmentActivity {
 
-    //タスクのフラグメント
+
     public static TaskFragment listFragment = new TaskFragment();
-    //カレンダーのフラグメント
+
     CalendarFragment calendarFragment = new CalendarFragment();
-    //ViewPager
+
     ViewPager viewPager ;
 
-    /************************************************************
-     * onCreateメソッド<br>
-     * 各フラグメントを表示する。
-     ************************************************************/
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //月移動ボタンのインスタンス生成
         //Button nextButton = (Button)this.findViewById(R.id.nextButton);
         //Button prevButton = (Button)this.findViewById(R.id.prevButton);
 
         /*
-        //次の月表示ボタン　の　リスナ
         nextButton.setOnTouchListener(new OnTouchListener(){
             public boolean onTouch(View v, MotionEvent event) {
                 if(event.getActionMasked()==MotionEvent.ACTION_DOWN){
@@ -52,7 +37,6 @@ public class MainActivity extends FragmentActivity {
                 return true;
             }
         });
-        //前の月表示ボタン　の　リスナ
         prevButton.setOnTouchListener(new OnTouchListener(){
             public boolean onTouch(View v, MotionEvent event) {
                 if(event.getActionMasked()==MotionEvent.ACTION_DOWN){
@@ -66,7 +50,6 @@ public class MainActivity extends FragmentActivity {
         */
         viewPager = (ViewPager)this.findViewById(R.id.calendar_viewpager);
 
-        //フラグメントを表示させる。
         FragmentManager fm = this.getSupportFragmentManager();
 
         CalendarPagerAdapter adapter = new CalendarPagerAdapter(fm);
@@ -96,14 +79,12 @@ public class MainActivity extends FragmentActivity {
         return list;
     }
 
-    //オプションメニュー（未設定）
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
 
-    //オプションメニューの選択（未設定）
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long

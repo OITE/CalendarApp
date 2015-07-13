@@ -6,31 +6,31 @@
     android:focusable="true"
     android:focusableInTouchMode="true"><requestFocus/>
     <LinearLayout
-        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:id="@+id/dayofweek"
-        android:baselineAligned="false">
+        android:baselineAligned="false"
+        android:layout_weight="0">
 
         <LinearLayout
-            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1"
             android:focusable="false"
             android:focusableInTouchMode="false"
             android:id="@+id/dow1"
             android:background="@drawable/background_shape_default"
-            android:layout_gravity="center_horizontal">
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="1">
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:text="日"
                 android:id="@+id/Sunday"
                 android:gravity="center"
-                android:layout_gravity="center" />
+                android:layout_gravity="center"
+                android:autoText="false" />
         </LinearLayout>
 
         <LinearLayout
@@ -166,13 +166,21 @@
             android:focusableInTouchMode="true"
             android:id="@+id/day11"
             android:background="@drawable/background_shape_default"
-            android:clickable="true">
+            android:clickable="true"
+            android:padding="-5dp">
 
             <TextView
-                android:layout_width="fill_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="1"
-                android:id="@+id/dayText01" />
+                android:id="@+id/dayText01"
+                android:textSize="10dp"
+                android:gravity="center_horizontal"
+                android:layout_gravity="center_horizontal"
+                android:autoText="false"
+                android:singleLine="true"
+                android:layout_marginTop="-4dp"
+                android:layout_marginBottom="-4dp" />
 
         </LinearLayout>
 
@@ -185,13 +193,21 @@
             android:focusableInTouchMode="true"
             android:id="@+id/day12"
             android:background="@drawable/background_shape_default"
-            android:clickable="true">
+            android:clickable="true"
+            android:padding="-5dp">
 
             <TextView
-                android:layout_width="fill_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="2"
-                android:id="@+id/dayText02" />
+                android:text="1"
+                android:id="@+id/dayText02"
+                android:textSize="10dp"
+                android:gravity="center_horizontal"
+                android:layout_gravity="center_horizontal"
+                android:autoText="false"
+                android:singleLine="true"
+                android:layout_marginTop="-4dp"
+                android:layout_marginBottom="-4dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -203,13 +219,21 @@
             android:focusableInTouchMode="true"
             android:id="@+id/day13"
             android:background="@drawable/background_shape_default"
-            android:clickable="true">
+            android:clickable="true"
+            android:padding="-5dp">
 
             <TextView
-                android:layout_width="fill_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="1"
-                android:id="@+id/dayText03" />
+                android:id="@+id/dayText03"
+                android:textSize="10dp"
+                android:gravity="center_horizontal"
+                android:layout_gravity="center_horizontal"
+                android:autoText="false"
+                android:singleLine="true"
+                android:layout_marginTop="-4dp"
+                android:layout_marginBottom="-4dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -221,13 +245,21 @@
             android:focusableInTouchMode="true"
             android:id="@+id/day14"
             android:background="@drawable/background_shape_default"
-            android:clickable="true">
+            android:clickable="true"
+            android:padding="-5dp">
 
             <TextView
-                android:layout_width="fill_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="1"
-                android:id="@+id/dayText04" />
+                android:id="@+id/dayText04"
+                android:textSize="10dp"
+                android:gravity="center_horizontal"
+                android:layout_gravity="center_horizontal"
+                android:autoText="false"
+                android:singleLine="true"
+                android:layout_marginTop="-4dp"
+                android:layout_marginBottom="-4dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -239,13 +271,21 @@
             android:focusableInTouchMode="true"
             android:id="@+id/day15"
             android:background="@drawable/background_shape_default"
-            android:clickable="true">
+            android:clickable="true"
+            android:padding="-5dp">
 
             <TextView
-                android:layout_width="fill_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="1"
-                android:id="@+id/dayText05" />
+                android:id="@+id/dayText05"
+                android:textSize="10dp"
+                android:gravity="center_horizontal"
+                android:layout_gravity="center_horizontal"
+                android:autoText="false"
+                android:singleLine="true"
+                android:layout_marginTop="-4dp"
+                android:layout_marginBottom="-4dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -257,13 +297,21 @@
             android:focusableInTouchMode="true"
             android:id="@+id/day16"
             android:background="@drawable/background_shape_default"
-            android:clickable="true">
+            android:clickable="true"
+            android:padding="-5dp">
 
             <TextView
-                android:layout_width="fill_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="1"
-                android:id="@+id/dayText06" />
+                android:id="@+id/dayText06"
+                android:textSize="10dp"
+                android:gravity="center_horizontal"
+                android:layout_gravity="center_horizontal"
+                android:autoText="false"
+                android:singleLine="true"
+                android:layout_marginTop="-4dp"
+                android:layout_marginBottom="-4dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -275,13 +323,21 @@
             android:focusableInTouchMode="true"
             android:id="@+id/day17"
             android:background="@drawable/background_shape_default"
-            android:clickable="true">
+            android:clickable="true"
+            android:padding="-5dp">
 
             <TextView
-                android:layout_width="fill_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="1"
-                android:id="@+id/dayText07" />
+                android:id="@+id/dayText07"
+                android:textSize="10dp"
+                android:gravity="center_horizontal"
+                android:layout_gravity="center_horizontal"
+                android:autoText="false"
+                android:singleLine="true"
+                android:layout_marginTop="-4dp"
+                android:layout_marginBottom="-4dp" />
         </LinearLayout>
     </LinearLayout>
 
@@ -303,13 +359,21 @@
             android:focusableInTouchMode="true"
             android:id="@+id/day21"
             android:background="@drawable/background_shape_default"
-            android:clickable="true">
+            android:clickable="true"
+            android:padding="-5dp">
 
             <TextView
-                android:layout_width="fill_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="1"
-                android:id="@+id/dayText08" />
+                android:id="@+id/dayText08"
+                android:textSize="10dp"
+                android:gravity="center_horizontal"
+                android:layout_gravity="center_horizontal"
+                android:autoText="false"
+                android:singleLine="true"
+                android:layout_marginTop="-4dp"
+                android:layout_marginBottom="-4dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -321,13 +385,21 @@
             android:focusableInTouchMode="true"
             android:id="@+id/day22"
             android:background="@drawable/background_shape_default"
-            android:clickable="true">
+            android:clickable="true"
+            android:padding="-5dp">
 
             <TextView
-                android:layout_width="fill_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="1"
-                android:id="@+id/dayText09" />
+                android:id="@+id/dayText09"
+                android:textSize="10dp"
+                android:gravity="center_horizontal"
+                android:layout_gravity="center_horizontal"
+                android:autoText="false"
+                android:singleLine="true"
+                android:layout_marginTop="-4dp"
+                android:layout_marginBottom="-4dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -339,13 +411,21 @@
             android:focusableInTouchMode="true"
             android:id="@+id/day23"
             android:background="@drawable/background_shape_default"
-            android:clickable="true">
+            android:clickable="true"
+            android:padding="-5dp">
 
             <TextView
-                android:layout_width="fill_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="1"
-                android:id="@+id/dayText10" />
+                android:id="@+id/dayText10"
+                android:textSize="10dp"
+                android:gravity="center_horizontal"
+                android:layout_gravity="center_horizontal"
+                android:autoText="false"
+                android:singleLine="true"
+                android:layout_marginTop="-4dp"
+                android:layout_marginBottom="-4dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -357,13 +437,21 @@
             android:focusableInTouchMode="true"
             android:id="@+id/day24"
             android:background="@drawable/background_shape_default"
-            android:clickable="true">
+            android:clickable="true"
+            android:padding="-5dp">
 
             <TextView
-                android:layout_width="fill_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="1"
-                android:id="@+id/dayText11" />
+                android:id="@+id/dayText11"
+                android:textSize="10dp"
+                android:gravity="center_horizontal"
+                android:layout_gravity="center_horizontal"
+                android:autoText="false"
+                android:singleLine="true"
+                android:layout_marginTop="-4dp"
+                android:layout_marginBottom="-4dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -375,13 +463,21 @@
             android:focusableInTouchMode="true"
             android:id="@+id/day25"
             android:background="@drawable/background_shape_default"
-            android:clickable="true">
+            android:clickable="true"
+            android:padding="-5dp">
 
             <TextView
-                android:layout_width="fill_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="1"
-                android:id="@+id/dayText12" />
+                android:id="@+id/dayText12"
+                android:textSize="10dp"
+                android:gravity="center_horizontal"
+                android:layout_gravity="center_horizontal"
+                android:autoText="false"
+                android:singleLine="true"
+                android:layout_marginTop="-4dp"
+                android:layout_marginBottom="-4dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -393,13 +489,21 @@
             android:focusableInTouchMode="true"
             android:id="@+id/day26"
             android:background="@drawable/background_shape_default"
-            android:clickable="true">
+            android:clickable="true"
+            android:padding="-5dp">
 
             <TextView
-                android:layout_width="fill_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="1"
-                android:id="@+id/dayText13" />
+                android:id="@+id/dayText13"
+                android:textSize="10dp"
+                android:gravity="center_horizontal"
+                android:layout_gravity="center_horizontal"
+                android:autoText="false"
+                android:singleLine="true"
+                android:layout_marginTop="-4dp"
+                android:layout_marginBottom="-4dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -411,13 +515,21 @@
             android:focusableInTouchMode="true"
             android:id="@+id/day27"
             android:background="@drawable/background_shape_default"
-            android:clickable="true">
+            android:clickable="true"
+            android:padding="-5dp">
 
             <TextView
-                android:layout_width="fill_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="1"
-                android:id="@+id/dayText14" />
+                android:id="@+id/dayText14"
+                android:textSize="10dp"
+                android:gravity="center_horizontal"
+                android:layout_gravity="center_horizontal"
+                android:autoText="false"
+                android:singleLine="true"
+                android:layout_marginTop="-4dp"
+                android:layout_marginBottom="-4dp" />
         </LinearLayout>
     </LinearLayout>
 
@@ -439,13 +551,21 @@
             android:focusableInTouchMode="true"
             android:id="@+id/day31"
             android:background="@drawable/background_shape_default"
-            android:clickable="true">
+            android:clickable="true"
+            android:padding="-5dp">
 
             <TextView
-                android:layout_width="fill_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="1"
-                android:id="@+id/dayText15" />
+                android:id="@+id/dayText15"
+                android:textSize="10dp"
+                android:gravity="center_horizontal"
+                android:layout_gravity="center_horizontal"
+                android:autoText="false"
+                android:singleLine="true"
+                android:layout_marginTop="-4dp"
+                android:layout_marginBottom="-4dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -457,13 +577,21 @@
             android:focusableInTouchMode="true"
             android:id="@+id/day32"
             android:background="@drawable/background_shape_default"
-            android:clickable="true">
+            android:clickable="true"
+            android:padding="-5dp">
 
             <TextView
-                android:layout_width="fill_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="1"
-                android:id="@+id/dayText16" />
+                android:id="@+id/dayText16"
+                android:textSize="10dp"
+                android:gravity="center_horizontal"
+                android:layout_gravity="center_horizontal"
+                android:autoText="false"
+                android:singleLine="true"
+                android:layout_marginTop="-4dp"
+                android:layout_marginBottom="-4dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -475,13 +603,21 @@
             android:focusableInTouchMode="true"
             android:id="@+id/day33"
             android:background="@drawable/background_shape_default"
-            android:clickable="true">
+            android:clickable="true"
+            android:padding="-5dp">
 
             <TextView
-                android:layout_width="fill_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="1"
-                android:id="@+id/dayText17" />
+                android:id="@+id/dayText17"
+                android:textSize="10dp"
+                android:gravity="center_horizontal"
+                android:layout_gravity="center_horizontal"
+                android:autoText="false"
+                android:singleLine="true"
+                android:layout_marginTop="-4dp"
+                android:layout_marginBottom="-4dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -493,13 +629,21 @@
             android:focusableInTouchMode="true"
             android:id="@+id/day34"
             android:background="@drawable/background_shape_default"
-            android:clickable="true">
+            android:clickable="true"
+            android:padding="-5dp">
 
             <TextView
-                android:layout_width="fill_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="1"
-                android:id="@+id/dayText18" />
+                android:id="@+id/dayText18"
+                android:textSize="10dp"
+                android:gravity="center_horizontal"
+                android:layout_gravity="center_horizontal"
+                android:autoText="false"
+                android:singleLine="true"
+                android:layout_marginTop="-4dp"
+                android:layout_marginBottom="-4dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -511,13 +655,21 @@
             android:focusableInTouchMode="true"
             android:id="@+id/day35"
             android:background="@drawable/background_shape_default"
-            android:clickable="true">
+            android:clickable="true"
+            android:padding="-5dp">
 
             <TextView
-                android:layout_width="fill_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="1"
-                android:id="@+id/dayText19" />
+                android:id="@+id/dayText19"
+                android:textSize="10dp"
+                android:gravity="center_horizontal"
+                android:layout_gravity="center_horizontal"
+                android:autoText="false"
+                android:singleLine="true"
+                android:layout_marginTop="-4dp"
+                android:layout_marginBottom="-4dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -529,13 +681,21 @@
             android:focusableInTouchMode="true"
             android:id="@+id/day36"
             android:background="@drawable/background_shape_default"
-            android:clickable="true">
+            android:clickable="true"
+            android:padding="-5dp">
 
             <TextView
-                android:layout_width="fill_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="1"
-                android:id="@+id/dayText20" />
+                android:id="@+id/dayText20"
+                android:textSize="10dp"
+                android:gravity="center_horizontal"
+                android:layout_gravity="center_horizontal"
+                android:autoText="false"
+                android:singleLine="true"
+                android:layout_marginTop="-4dp"
+                android:layout_marginBottom="-4dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -547,13 +707,21 @@
             android:focusableInTouchMode="true"
             android:id="@+id/day37"
             android:background="@drawable/background_shape_default"
-            android:clickable="true">
+            android:clickable="true"
+            android:padding="-5dp">
 
             <TextView
-                android:layout_width="fill_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="1"
-                android:id="@+id/dayText21" />
+                android:id="@+id/dayText21"
+                android:textSize="10dp"
+                android:gravity="center_horizontal"
+                android:layout_gravity="center_horizontal"
+                android:autoText="false"
+                android:singleLine="true"
+                android:layout_marginTop="-4dp"
+                android:layout_marginBottom="-4dp" />
         </LinearLayout>
     </LinearLayout>
 
@@ -575,13 +743,21 @@
             android:focusableInTouchMode="true"
             android:id="@+id/day41"
             android:background="@drawable/background_shape_default"
-            android:clickable="true">
+            android:clickable="true"
+            android:padding="-5dp">
 
             <TextView
-                android:layout_width="fill_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="1"
-                android:id="@+id/dayText22" />
+                android:id="@+id/dayText22"
+                android:textSize="10dp"
+                android:gravity="center_horizontal"
+                android:layout_gravity="center_horizontal"
+                android:autoText="false"
+                android:singleLine="true"
+                android:layout_marginTop="-4dp"
+                android:layout_marginBottom="-4dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -593,13 +769,21 @@
             android:focusableInTouchMode="true"
             android:id="@+id/day42"
             android:background="@drawable/background_shape_default"
-            android:clickable="true">
+            android:clickable="true"
+            android:padding="-5dp">
 
             <TextView
-                android:layout_width="fill_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="1"
-                android:id="@+id/dayText23" />
+                android:id="@+id/dayText23"
+                android:textSize="10dp"
+                android:gravity="center_horizontal"
+                android:layout_gravity="center_horizontal"
+                android:autoText="false"
+                android:singleLine="true"
+                android:layout_marginTop="-4dp"
+                android:layout_marginBottom="-4dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -611,13 +795,21 @@
             android:focusableInTouchMode="true"
             android:id="@+id/day43"
             android:background="@drawable/background_shape_default"
-            android:clickable="true">
+            android:clickable="true"
+            android:padding="-5dp">
 
             <TextView
-                android:layout_width="fill_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="1"
-                android:id="@+id/dayText24" />
+                android:id="@+id/dayText24"
+                android:textSize="10dp"
+                android:gravity="center_horizontal"
+                android:layout_gravity="center_horizontal"
+                android:autoText="false"
+                android:singleLine="true"
+                android:layout_marginTop="-4dp"
+                android:layout_marginBottom="-4dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -629,13 +821,21 @@
             android:focusableInTouchMode="true"
             android:id="@+id/day44"
             android:background="@drawable/background_shape_default"
-            android:clickable="true">
+            android:clickable="true"
+            android:padding="-5dp">
 
             <TextView
-                android:layout_width="fill_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="1"
-                android:id="@+id/dayText25" />
+                android:id="@+id/dayText25"
+                android:textSize="10dp"
+                android:gravity="center_horizontal"
+                android:layout_gravity="center_horizontal"
+                android:autoText="false"
+                android:singleLine="true"
+                android:layout_marginTop="-4dp"
+                android:layout_marginBottom="-4dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -647,13 +847,21 @@
             android:focusableInTouchMode="true"
             android:id="@+id/day45"
             android:background="@drawable/background_shape_default"
-            android:clickable="true">
+            android:clickable="true"
+            android:padding="-5dp">
 
             <TextView
-                android:layout_width="fill_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="1"
-                android:id="@+id/dayText26" />
+                android:id="@+id/dayText26"
+                android:textSize="10dp"
+                android:gravity="center_horizontal"
+                android:layout_gravity="center_horizontal"
+                android:autoText="false"
+                android:singleLine="true"
+                android:layout_marginTop="-4dp"
+                android:layout_marginBottom="-4dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -665,13 +873,21 @@
             android:focusableInTouchMode="true"
             android:id="@+id/day46"
             android:background="@drawable/background_shape_default"
-            android:clickable="true">
+            android:clickable="true"
+            android:padding="-5dp">
 
             <TextView
-                android:layout_width="fill_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="1"
-                android:id="@+id/dayText27" />
+                android:id="@+id/dayText27"
+                android:textSize="10dp"
+                android:gravity="center_horizontal"
+                android:layout_gravity="center_horizontal"
+                android:autoText="false"
+                android:singleLine="true"
+                android:layout_marginTop="-4dp"
+                android:layout_marginBottom="-4dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -683,13 +899,21 @@
             android:focusableInTouchMode="true"
             android:id="@+id/ady47"
             android:background="@drawable/background_shape_default"
-            android:clickable="true">
+            android:clickable="true"
+            android:padding="-5dp">
 
             <TextView
-                android:layout_width="fill_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="1"
-                android:id="@+id/dayText28" />
+                android:id="@+id/dayText28"
+                android:textSize="10dp"
+                android:gravity="center_horizontal"
+                android:layout_gravity="center_horizontal"
+                android:autoText="false"
+                android:singleLine="true"
+                android:layout_marginTop="-4dp"
+                android:layout_marginBottom="-4dp" />
         </LinearLayout>
     </LinearLayout>
 
@@ -711,13 +935,21 @@
             android:focusableInTouchMode="true"
             android:id="@+id/day51"
             android:background="@drawable/background_shape_default"
-            android:clickable="true">
+            android:clickable="true"
+            android:padding="-5dp">
 
             <TextView
-                android:layout_width="fill_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="1"
-                android:id="@+id/dayText29" />
+                android:id="@+id/dayText29"
+                android:textSize="10dp"
+                android:gravity="center_horizontal"
+                android:layout_gravity="center_horizontal"
+                android:autoText="false"
+                android:singleLine="true"
+                android:layout_marginTop="-4dp"
+                android:layout_marginBottom="-4dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -729,13 +961,21 @@
             android:focusableInTouchMode="true"
             android:id="@+id/day52"
             android:background="@drawable/background_shape_default"
-            android:clickable="true">
+            android:clickable="true"
+            android:padding="-5dp">
 
             <TextView
-                android:layout_width="fill_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="1"
-                android:id="@+id/dayText30" />
+                android:id="@+id/dayText30"
+                android:textSize="10dp"
+                android:gravity="center_horizontal"
+                android:layout_gravity="center_horizontal"
+                android:autoText="false"
+                android:singleLine="true"
+                android:layout_marginTop="-4dp"
+                android:layout_marginBottom="-4dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -747,13 +987,21 @@
             android:focusableInTouchMode="true"
             android:id="@+id/day53"
             android:background="@drawable/background_shape_default"
-            android:clickable="true">
+            android:clickable="true"
+            android:padding="-5dp">
 
             <TextView
-                android:layout_width="fill_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="1"
-                android:id="@+id/dayText31" />
+                android:id="@+id/dayText31"
+                android:textSize="10dp"
+                android:gravity="center_horizontal"
+                android:layout_gravity="center_horizontal"
+                android:autoText="false"
+                android:singleLine="true"
+                android:layout_marginTop="-4dp"
+                android:layout_marginBottom="-4dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -765,13 +1013,21 @@
             android:focusableInTouchMode="true"
             android:id="@+id/day54"
             android:background="@drawable/background_shape_default"
-            android:clickable="true">
+            android:clickable="true"
+            android:padding="-5dp">
 
             <TextView
-                android:layout_width="fill_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="1"
-                android:id="@+id/dayText32" />
+                android:id="@+id/dayText32"
+                android:textSize="10dp"
+                android:gravity="center_horizontal"
+                android:layout_gravity="center_horizontal"
+                android:autoText="false"
+                android:singleLine="true"
+                android:layout_marginTop="-4dp"
+                android:layout_marginBottom="-4dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -783,13 +1039,21 @@
             android:focusableInTouchMode="true"
             android:id="@+id/day55"
             android:background="@drawable/background_shape_default"
-            android:clickable="true">
+            android:clickable="true"
+            android:padding="-5dp">
 
             <TextView
-                android:layout_width="fill_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="1"
-                android:id="@+id/dayText33" />
+                android:id="@+id/dayText33"
+                android:textSize="10dp"
+                android:gravity="center_horizontal"
+                android:layout_gravity="center_horizontal"
+                android:autoText="false"
+                android:singleLine="true"
+                android:layout_marginTop="-4dp"
+                android:layout_marginBottom="-4dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -801,13 +1065,21 @@
             android:focusableInTouchMode="true"
             android:id="@+id/day56"
             android:background="@drawable/background_shape_default"
-            android:clickable="true">
+            android:clickable="true"
+            android:padding="-5dp">
 
             <TextView
-                android:layout_width="fill_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="1"
-                android:id="@+id/dayText34" />
+                android:id="@+id/dayText34"
+                android:textSize="10dp"
+                android:gravity="center_horizontal"
+                android:layout_gravity="center_horizontal"
+                android:autoText="false"
+                android:singleLine="true"
+                android:layout_marginTop="-4dp"
+                android:layout_marginBottom="-4dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -819,13 +1091,21 @@
             android:focusableInTouchMode="true"
             android:id="@+id/day57"
             android:background="@drawable/background_shape_default"
-            android:clickable="true">
+            android:clickable="true"
+            android:padding="-5dp">
 
             <TextView
-                android:layout_width="fill_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="1"
-                android:id="@+id/dayText35" />
+                android:id="@+id/dayText35"
+                android:textSize="10dp"
+                android:gravity="center_horizontal"
+                android:layout_gravity="center_horizontal"
+                android:autoText="false"
+                android:singleLine="true"
+                android:layout_marginTop="-4dp"
+                android:layout_marginBottom="-4dp" />
         </LinearLayout>
     </LinearLayout>
 
@@ -847,13 +1127,21 @@
             android:focusableInTouchMode="true"
             android:id="@+id/day61"
             android:background="@drawable/background_shape_default"
-            android:clickable="true">
+            android:clickable="true"
+            android:padding="-5dp">
 
             <TextView
-                android:layout_width="fill_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="1"
-                android:id="@+id/dayText36" />
+                android:id="@+id/dayText36"
+                android:textSize="10dp"
+                android:gravity="center_horizontal"
+                android:layout_gravity="center_horizontal"
+                android:autoText="false"
+                android:singleLine="true"
+                android:layout_marginTop="-4dp"
+                android:layout_marginBottom="-4dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -865,13 +1153,21 @@
             android:focusableInTouchMode="true"
             android:id="@+id/day62"
             android:background="@drawable/background_shape_default"
-            android:clickable="true">
+            android:clickable="true"
+            android:padding="-5dp">
 
             <TextView
-                android:layout_width="fill_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="1"
-                android:id="@+id/dayText37" />
+                android:id="@+id/dayText37"
+                android:textSize="10dp"
+                android:gravity="center_horizontal"
+                android:layout_gravity="center_horizontal"
+                android:autoText="false"
+                android:singleLine="true"
+                android:layout_marginTop="-4dp"
+                android:layout_marginBottom="-4dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -883,13 +1179,21 @@
             android:focusableInTouchMode="true"
             android:id="@+id/day63"
             android:background="@drawable/background_shape_default"
-            android:clickable="true">
+            android:clickable="true"
+            android:padding="-5dp">
 
             <TextView
-                android:layout_width="fill_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="1"
-                android:id="@+id/dayText38" />
+                android:id="@+id/dayText38"
+                android:textSize="10dp"
+                android:gravity="center_horizontal"
+                android:layout_gravity="center_horizontal"
+                android:autoText="false"
+                android:singleLine="true"
+                android:layout_marginTop="-4dp"
+                android:layout_marginBottom="-4dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -901,13 +1205,21 @@
             android:focusableInTouchMode="true"
             android:id="@+id/day64"
             android:background="@drawable/background_shape_default"
-            android:clickable="true">
+            android:clickable="true"
+            android:padding="-5dp">
 
             <TextView
-                android:layout_width="fill_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="1"
-                android:id="@+id/dayText39" />
+                android:id="@+id/dayText39"
+                android:textSize="10dp"
+                android:gravity="center_horizontal"
+                android:layout_gravity="center_horizontal"
+                android:autoText="false"
+                android:singleLine="true"
+                android:layout_marginTop="-4dp"
+                android:layout_marginBottom="-4dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -919,13 +1231,21 @@
             android:focusableInTouchMode="true"
             android:id="@+id/day65"
             android:background="@drawable/background_shape_default"
-            android:clickable="true">
+            android:clickable="true"
+            android:padding="-5dp">
 
             <TextView
-                android:layout_width="fill_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="1"
-                android:id="@+id/dayText40" />
+                android:id="@+id/dayText40"
+                android:textSize="10dp"
+                android:gravity="center_horizontal"
+                android:layout_gravity="center_horizontal"
+                android:autoText="false"
+                android:singleLine="true"
+                android:layout_marginTop="-4dp"
+                android:layout_marginBottom="-4dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -937,13 +1257,21 @@
             android:focusableInTouchMode="true"
             android:id="@+id/day66"
             android:background="@drawable/background_shape_default"
-            android:clickable="true">
+            android:clickable="true"
+            android:padding="-5dp">
 
             <TextView
-                android:layout_width="fill_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="1"
-                android:id="@+id/dayText41" />
+                android:id="@+id/dayText41"
+                android:textSize="10dp"
+                android:gravity="center_horizontal"
+                android:layout_gravity="center_horizontal"
+                android:autoText="false"
+                android:singleLine="true"
+                android:layout_marginTop="-4dp"
+                android:layout_marginBottom="-4dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -955,13 +1283,21 @@
             android:focusableInTouchMode="true"
             android:id="@+id/day67"
             android:background="@drawable/background_shape_default"
-            android:clickable="true">
+            android:clickable="true"
+            android:padding="-5dp">
 
             <TextView
-                android:layout_width="fill_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="1"
-                android:id="@+id/dayText42" />
+                android:id="@+id/dayText42"
+                android:textSize="10dp"
+                android:gravity="center_horizontal"
+                android:layout_gravity="center_horizontal"
+                android:autoText="false"
+                android:singleLine="true"
+                android:layout_marginTop="-4dp"
+                android:layout_marginBottom="-4dp" />
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>
