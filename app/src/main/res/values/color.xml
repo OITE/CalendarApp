@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="shape_default_stroke">#AAAAAA</color>
+    <color name="shape_default_solid">#EEEEEE</color>
+    <color name="shape_default_focused_stroke">#777777</color>
+    <color name="shape_default_focused_solid">#AAEEAA</color>
+
+</resources>

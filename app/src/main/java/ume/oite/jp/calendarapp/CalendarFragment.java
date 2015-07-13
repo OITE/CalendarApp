@@ -1,7 +1,8 @@
 package ume.oite.jp.calendarapp;
 
-import android.support.v4.app.Fragment;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -39,14 +40,46 @@ public class CalendarFragment extends Fragment{
         int month = bundle.getInt("month");
 
         //レイアウトファイルをView型に変換する
-        calendarLayout = inflater.inflate(R.layout.fragment_calendar,container,false);
+        calendarLayout = inflater.inflate(R.layout.fragment_calendar_2,container,false);
 
         //カレンダーを初期化（現在の年月日にする。）
-        updateCalendar(0);
-        update_setCalendar(year,month);
+        //updateCalendar(0);
+        //update_setCalendar(year,month);
+        makeCalendar(year,month);
 
         return calendarLayout;
     }
+
+    private void makeCalendar(int year,int month){
+
+        //カレンダーに指定の年月を入力
+        calendar.set(year, month, 1);
+
+        //カレンダーの左上端へ移動
+        calendar.add(Calendar.DATE, -(calendar.get(Calendar.DAY_OF_WEEK) - 1));
+
+        //各週のViewGroupを取得
+        ViewGroup[] weeks = new ViewGroup[6];
+        weeks[0] = (ViewGroup) calendarLayout.findViewById(R.id.week1);
+        weeks[1] = (ViewGroup) calendarLayout.findViewById(R.id.week2);
+        weeks[2] = (ViewGroup) calendarLayout.findViewById(R.id.week3);
+        weeks[3] = (ViewGroup) calendarLayout.findViewById(R.id.week4);
+        weeks[4] = (ViewGroup) calendarLayout.findViewById(R.id.week5);
+        weeks[5] = (ViewGroup) calendarLayout.findViewById(R.id.week6);
+
+        Log.d("debug","week1="+weeks[0]);
+
+        for(ViewGroup week : weeks){
+            for(int i=0;i<week.getChildCount();i++){
+                TextView tv = ((TextView)((ViewGroup)week.getChildAt(i)).getChildAt(0));
+                // week の中の day の中の dayText にアクセス
+                if(tv!=null)tv.setText(String.valueOf(calendar.get(Calendar.DATE)));
+                calendar.add(Calendar.DATE,+1);
+            }
+        }
+    }
+
+
 
     /************************************************************
      * updateCalendarメソッド<br>
@@ -80,7 +113,7 @@ public class CalendarFragment extends Fragment{
         ViewGroup calendarGroup = (ViewGroup)calendarLayout.findViewById(R.id.calendar);
 
         //6週間分ループさせる
-        for(int week=0;week<calendarGroup.getChildCount();week++){
+        for(int week=1;week<calendarGroup.getChildCount();week++){
             //各週のlayoutをViewGroupとして読み込む
             ViewGroup weeks = (ViewGroup) calendarGroup.getChildAt(week);
 

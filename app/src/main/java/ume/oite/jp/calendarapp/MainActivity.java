@@ -1,10 +1,10 @@
 package ume.oite.jp.calendarapp;
 
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.util.SparseArrayCompat;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
@@ -32,7 +32,7 @@ import java.util.Calendar;
  *
  * @author FuyukiUmeta
  ************************************************************/
-public class MainActivity extends FragmentActivity {
+public class MainActivity extends AppCompatActivity {
 
     //タスクのフラグメント
     public static TaskFragment listFragment = new TaskFragment();
