@@ -12,30 +12,30 @@ import android.os.Bundle;
 import android.widget.EditText;
 
 /************************************************************
- * EditTextDialogã‚¯ãƒ©ã‚¹<br>
+ * EditTextDialogƒNƒ‰ƒX<br>
  * <br>
- * ã‚³ãƒ”ãƒšãªã®ã§æœªæŠŠæ¡<br>
+ * ƒRƒsƒy‚È‚Ì‚Å–¢”cˆ¬<br>
  * @author FuyukiUmeta
  ************************************************************/
 public class EditTextDialog extends DialogFragment {
 
-    //OKãƒœã‚¿ãƒ³ã‚’ã‚¯ãƒªãƒƒã‚¯ã—ãŸæ™‚ã®ãƒªã‚¹ãƒŠ
+    //OKƒ{ƒ^ƒ“‚ğƒNƒŠƒbƒN‚µ‚½‚ÌƒŠƒXƒi
     private DialogInterface.OnClickListener okClickListener = null;
 
-    //Cancelãƒœã‚¿ãƒ³ã‚’ã‚¯ãƒªãƒƒã‚¯ã—ãŸæ™‚ã®ãƒªã‚¹ãƒŠ
+    //Cancelƒ{ƒ^ƒ“‚ğƒNƒŠƒbƒN‚µ‚½‚ÌƒŠƒXƒi
     private DialogInterface.OnClickListener cancelClickListener = null;
 
-    //EditTextå‹ã®ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹
+    //EditTextŒ^‚ÌƒCƒ“ƒXƒ^ƒ“ƒX
     private EditText editText;
 
 
     /************************************************************
-     * newInstanceãƒ¡ã‚½ãƒƒãƒ‰<br>
-     * newInstanceãƒ¡ã‚½ãƒƒãƒ‰ã§ã—ã‹æ–°ã—ã„ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’ä½œæˆã§ããªãã—ã¦ã„ã‚‹ã€‚<br>
+     * newInstanceƒƒ\ƒbƒh<br>
+     * newInstanceƒƒ\ƒbƒh‚Å‚µ‚©V‚µ‚¢ƒIƒuƒWƒFƒNƒg‚ğì¬‚Å‚«‚È‚­‚µ‚Ä‚¢‚éB<br>
      ************************************************************/
     public static EditTextDialog newInstance(String title, String message) {
 
-        //æ–°ãŸãªãƒ•ãƒ©ã‚°ãƒ¡ãƒ³ãƒˆã‚’ä½œæˆ
+        //V‚½‚Èƒtƒ‰ƒOƒƒ“ƒg‚ğì¬
         EditTextDialog fragment = new EditTextDialog();
         Bundle args = new Bundle();
         args.putString("title", title);
@@ -46,17 +46,17 @@ public class EditTextDialog extends DialogFragment {
     }
 
     /************************************************************
-     * onCreateDialogãƒ¡ã‚½ãƒƒãƒ‰<br>
-     * ãƒ€ã‚¤ã‚¢ãƒ­ã‚°ã‚’ä½œæˆã™ã‚‹ã€‚<br>
+     * onCreateDialogƒƒ\ƒbƒh<br>
+     * ƒ_ƒCƒAƒƒO‚ğì¬‚·‚éB<br>
      ************************************************************/
     public Dialog onCreateDialog(Bundle safedInstanceState) {
 
-        //ã‚¿ã‚¤ãƒˆãƒ«ã¨ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ï¼Ÿ
+        //ƒ^ƒCƒgƒ‹‚ÆƒƒbƒZ[ƒWH
         String title = getArguments().getString("title");
         String message = getArguments().getString("message");
 
-        //ã‚¢ãƒ©ãƒ¼ãƒˆãƒ€ã‚¤ã‚¢ãƒ­ã‚°ã‚’ç”Ÿæˆï¼Ÿ
-        //ãã“ã«editTextã‚„ãƒœã‚¿ãƒ³ã®ãƒªã‚¹ãƒŠã‚’è¨­å®šï¼Ÿ
+        //ƒAƒ‰[ƒgƒ_ƒCƒAƒƒO‚ğ¶¬H
+        //‚»‚±‚ÉeditText‚âƒ{ƒ^ƒ“‚ÌƒŠƒXƒi‚ğİ’èH
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         builder.setTitle(title)
                 .setMessage(message)
@@ -68,24 +68,24 @@ public class EditTextDialog extends DialogFragment {
     }
 
     /************************************************************
-     * setOnOkClickListenerãƒ¡ã‚½ãƒƒãƒ‰<br>
-     * OKãƒœã‚¿ãƒ³ã‚’ãŠã—ãŸæ™‚ã®ãƒªã‚¹ãƒŠã‚’è¿”å´<br>
+     * setOnOkClickListenerƒƒ\ƒbƒh<br>
+     * OKƒ{ƒ^ƒ“‚ğ‚¨‚µ‚½‚ÌƒŠƒXƒi‚ğ•Ô‹p<br>
      ************************************************************/
     public void setOnOkClickListener(DialogInterface.OnClickListener listener) {
         this.okClickListener = listener;
     }
 
     /************************************************************
-     * setOnCancelClickListenerãƒ¡ã‚½ãƒƒãƒ‰<br>
-     * Cancelãƒœã‚¿ãƒ³ã‚’ãŠã—ãŸæ™‚ã®ãƒªã‚¹ãƒŠã‚’è¿”å´<br>
+     * setOnCancelClickListenerƒƒ\ƒbƒh<br>
+     * Cancelƒ{ƒ^ƒ“‚ğ‚¨‚µ‚½‚ÌƒŠƒXƒi‚ğ•Ô‹p<br>
      ************************************************************/
     public void setOnCancelClickListener(DialogInterface.OnClickListener listener) {
         this.cancelClickListener = listener;
     }
 
     /************************************************************
-     * setEditTextãƒ¡ã‚½ãƒƒãƒ‰<br>
-     * editTextã‚’è¨­å®šã™ã‚‹ã€‚<br>
+     * setEditTextƒƒ\ƒbƒh<br>
+     * editText‚ğİ’è‚·‚éB<br>
      ************************************************************/
     public void setEditText(EditText editText) {
         this.editText = editText;

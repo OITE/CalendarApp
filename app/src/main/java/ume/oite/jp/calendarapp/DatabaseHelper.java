@@ -9,36 +9,36 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 /************************************************************
- * DatabaseHelperã‚¯ãƒ©ã‚¹<br>
+ * DatabaseHelperƒNƒ‰ƒX<br>
  * <br>
- * ãƒ‡ãƒ¼ã‚¿ãƒ™ãƒ¼ã‚¹ã«ã‚¢ã‚¯ã‚»ã‚¹ã™ã‚‹ãŸã‚ã«å¿…ãšä½œã‚‹ãƒ˜ãƒ«ãƒ‘ãƒ¼ã‚¯ãƒ©ã‚¹ã€‚<br>
- * SQLiteOpenHelperã‚¯ãƒ©ã‚¹ã‚’ç¶™æ‰¿ã—ã¦ã„ã‚‹ã€‚<br>
- * Database.dbã¨ã„ã†ãƒ‡ãƒ¼ã‚¿ãƒ™ãƒ¼ã‚¹ã«Sampleã¨ã„ã†ãƒ†ãƒ¼ãƒ–ãƒ«ã‚’ä½œæˆã—ã¦ã„ã‚‹ã€‚<br>
+ * ƒf[ƒ^ƒx[ƒX‚ÉƒAƒNƒZƒX‚·‚é‚½‚ß‚É•K‚¸ì‚éƒwƒ‹ƒp[ƒNƒ‰ƒXB<br>
+ * SQLiteOpenHelperƒNƒ‰ƒX‚ğŒp³‚µ‚Ä‚¢‚éB<br>
+ * Database.db‚Æ‚¢‚¤ƒf[ƒ^ƒx[ƒX‚ÉSample‚Æ‚¢‚¤ƒe[ƒuƒ‹‚ğì¬‚µ‚Ä‚¢‚éB<br>
  * @author FuyukiUmeta
  ************************************************************/
 public class DatabaseHelper extends SQLiteOpenHelper {
 
-    //ãƒ‡ãƒ¼ã‚¿ãƒ™ãƒ¼ã‚¹ã®åå‰
+    //ƒf[ƒ^ƒx[ƒX‚Ì–¼‘O
     public static final String DATABASE_NAME = "Database.db";
-    //ãƒ‡ãƒ¼ã‚¿ãƒ™ãƒ¼ã‚¹ã®ãƒãƒ¼ã‚¸ãƒ§ãƒ³
+    //ƒf[ƒ^ƒx[ƒX‚Ìƒo[ƒWƒ‡ƒ“
     public static final int DATABASE_VERSION = 1;
 
     /************************************************************
-     * ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿<br>
-     * ï¼ˆã‚ªãƒ¼ãƒãƒ¼ãƒ©ã‚¤ãƒ‰ï¼‰<br>
+     * ƒRƒ“ƒXƒgƒ‰ƒNƒ^<br>
+     * iƒI[ƒo[ƒ‰ƒCƒhj<br>
      ************************************************************/
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
     /************************************************************
-     * onCreateãƒ¡ã‚½ãƒƒãƒ‰<br>
-     * ã‚¢ãƒ—ãƒªã®ãƒ‡ãƒ¼ã‚¿ãƒ™ãƒ¼ã‚¹ã«ãƒ†ãƒ¼ãƒ–ãƒ«ã‚’ä½œæˆã™ã‚‹ã€‚<br>
+     * onCreateƒƒ\ƒbƒh<br>
+     * ƒAƒvƒŠ‚Ìƒf[ƒ^ƒx[ƒX‚Éƒe[ƒuƒ‹‚ğì¬‚·‚éB<br>
      ************************************************************/
     public void onCreate(SQLiteDatabase db) {
 
-        //ãƒ†ãƒ¼ãƒ–ãƒ«ä½œæˆSQL
-        //Sampleãƒ†ãƒ¼ãƒ–ãƒ«ã«ã€€IDã€€Dateã€€Scheduleã€€ã®3ã¤ã®è¦ç´ ã‚’ç”¨æ„ã™ã‚‹ã€‚
+        //ƒe[ƒuƒ‹ì¬SQL
+        //Sampleƒe[ƒuƒ‹‚É@ID@Date@Schedule@‚Ì3‚Â‚Ì—v‘f‚ğ—pˆÓ‚·‚éB
         String sql = "CREATE TABLE Sample ("
                 + " _id INTEGER PRIMARY KEY AUTOINCREMENT,"
                 + " Date TEXT,"
@@ -50,10 +50,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     /************************************************************
-     * onUpgradeãƒ¡ã‚½ãƒƒãƒ‰<br>
-     * ãƒ‡ãƒ¼ã‚¿ãƒ™ãƒ¼ã‚¹ãŒã‚¢ãƒƒãƒ—ã‚°ãƒ¬ãƒ¼ãƒ‰ã—ãŸæ™‚ã®å‡¦ç†<br>
+     * onUpgradeƒƒ\ƒbƒh<br>
+     * ƒf[ƒ^ƒx[ƒX‚ªƒAƒbƒvƒOƒŒ[ƒh‚µ‚½‚Ìˆ—<br>
      ************************************************************/
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        //æœªè¨­å®š
+        //–¢İ’è
     }
 }

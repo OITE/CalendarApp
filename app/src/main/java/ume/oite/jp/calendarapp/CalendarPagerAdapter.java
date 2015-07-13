@@ -41,6 +41,11 @@ public class CalendarPagerAdapter extends FragmentPagerAdapter {
         return fragment;
     }
 
+    @Override
+    public CharSequence getPageTitle(int Position){
+        return dateList.get(Position).get(0)+"”N@"+dateList.get(Position).get(1)+"Œ";
+    }
+
     public void add(SparseArrayCompat<Integer> item){
         dateList.add(item);
     }

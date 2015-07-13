@@ -1,60 +1,48 @@
 package ume.oite.jp.calendarapp;
 
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.util.SparseArrayCompat;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Button;
 
 import java.util.ArrayList;
 import java.util.Calendar;
-/*
- * ã“ã®ã‚¢ãƒ—ãƒªã¯ä»¥ä¸‹ã®ã‚µã‚¤ãƒˆã‚’å‚è€ƒã«ã—ã¾ã—ãŸã€‚
- * http://dangoya.jp/?p=302
- *
- * æ¢…ãƒ¡ãƒ¢ (éšæ™‚æ›´æ–°)
- * ãƒ»ã€€ã‚¿ã‚¹ã‚¯ã€€ï¼šã€€ã‚«ãƒ¬ãƒ³ãƒ€ãƒ¼ã®äºˆå®šã®ã“ã¨ã€‚
- * ãƒ»ã€€ã‚¹ã‚±ã‚¸ãƒ¥ãƒ¼ãƒ«ã€€ï¼šã€€ã‚¿ã‚¹ã‚¯ã®ã“ã¨ã€‚
- * ãƒ»ã€€ãƒ•ãƒ©ã‚°ãƒ¡ãƒ³ãƒˆã€€ï¼šã€€ã‚«ãƒ¬ãƒ³ãƒ€ãƒ¼éƒ¨åˆ†ã¨ã‚¿ã‚¹ã‚¯éƒ¨åˆ†ã«åˆ†ã‘ã¦ã‚ã‚‹ã€‚
- * ãƒ»ã€€ã‚¢ãƒ€ãƒ—ã‚¿ã€€ï¼šã€€ã“ã‚Œé–¢é€£ã‚ã‹ã‚‰ãªã„ã€‚
- */
-
 
 /************************************************************
- * MainActivityã‚¯ãƒ©ã‚¹<br>
+ * MainActivityƒNƒ‰ƒX<br>
  * <br>
- * ã‚¢ãƒ—ãƒªã®ãƒ¡ã‚¤ãƒ³ã¨ãªã‚‹ã‚¢ã‚¯ãƒ†ã‚£ãƒ“ãƒ†ã‚£ãƒ¼ã€‚<br>
- * ã“ã“ãŒå„Fragmentã‚’ç”Ÿæˆã—ç®¡ç†ã™ã‚‹ã€‚<br>
- * ã¾ãŸã€ã‚¿ã‚¹ã‚¯ã®ç·¨é›†ã‚„å‰Šé™¤ã¨ãªã‚‹ãƒ¡ã‚½ãƒƒãƒ‰ãŒç”¨æ„ã•ã‚Œã¦ã„ã‚‹ã€‚<br>
+ * ƒAƒvƒŠ‚ÌƒƒCƒ“‚Æ‚È‚éƒAƒNƒeƒBƒrƒeƒB[B<br>
+ * ‚±‚±‚ªŠeFragment‚ğ¶¬‚µŠÇ—‚·‚éB<br>
+ * ‚Ü‚½Aƒ^ƒXƒN‚Ì•ÒW‚âíœ‚Æ‚È‚éƒƒ\ƒbƒh‚ª—pˆÓ‚³‚ê‚Ä‚¢‚éB<br>
  *
  * @author FuyukiUmeta
  ************************************************************/
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends FragmentActivity {
 
-    //ã‚¿ã‚¹ã‚¯ã®ãƒ•ãƒ©ã‚°ãƒ¡ãƒ³ãƒˆ
+    //ƒ^ƒXƒN‚Ìƒtƒ‰ƒOƒƒ“ƒg
     public static TaskFragment listFragment = new TaskFragment();
-    //ã‚«ãƒ¬ãƒ³ãƒ€ãƒ¼ã®ãƒ•ãƒ©ã‚°ãƒ¡ãƒ³ãƒˆ
+    //ƒJƒŒƒ“ƒ_[‚Ìƒtƒ‰ƒOƒƒ“ƒg
     CalendarFragment calendarFragment = new CalendarFragment();
     //ViewPager
     ViewPager viewPager ;
 
     /************************************************************
-     * onCreateãƒ¡ã‚½ãƒƒãƒ‰<br>
-     * å„ãƒ•ãƒ©ã‚°ãƒ¡ãƒ³ãƒˆã‚’è¡¨ç¤ºã™ã‚‹ã€‚
+     * onCreateƒƒ\ƒbƒh<br>
+     * Šeƒtƒ‰ƒOƒƒ“ƒg‚ğ•\¦‚·‚éB
      ************************************************************/
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //æœˆç§»å‹•ãƒœã‚¿ãƒ³ã®ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ç”Ÿæˆ
-        Button nextButton = (Button)this.findViewById(R.id.nextButton);
-        Button prevButton = (Button)this.findViewById(R.id.prevButton);
+        //ŒˆÚ“®ƒ{ƒ^ƒ“‚ÌƒCƒ“ƒXƒ^ƒ“ƒX¶¬
+        //Button nextButton = (Button)this.findViewById(R.id.nextButton);
+        //Button prevButton = (Button)this.findViewById(R.id.prevButton);
 
         /*
-        //æ¬¡ã®æœˆè¡¨ç¤ºãƒœã‚¿ãƒ³ã€€ã®ã€€ãƒªã‚¹ãƒŠ
+        //Ÿ‚ÌŒ•\¦ƒ{ƒ^ƒ“@‚Ì@ƒŠƒXƒi
         nextButton.setOnTouchListener(new OnTouchListener(){
             public boolean onTouch(View v, MotionEvent event) {
                 if(event.getActionMasked()==MotionEvent.ACTION_DOWN){
@@ -64,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             }
         });
-        //å‰ã®æœˆè¡¨ç¤ºãƒœã‚¿ãƒ³ã€€ã®ã€€ãƒªã‚¹ãƒŠ
+        //‘O‚ÌŒ•\¦ƒ{ƒ^ƒ“@‚Ì@ƒŠƒXƒi
         prevButton.setOnTouchListener(new OnTouchListener(){
             public boolean onTouch(View v, MotionEvent event) {
                 if(event.getActionMasked()==MotionEvent.ACTION_DOWN){
@@ -78,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
         */
         viewPager = (ViewPager)this.findViewById(R.id.calendar_viewpager);
 
-        //ãƒ•ãƒ©ã‚°ãƒ¡ãƒ³ãƒˆã‚’è¡¨ç¤ºã•ã›ã‚‹ã€‚
+        //ƒtƒ‰ƒOƒƒ“ƒg‚ğ•\¦‚³‚¹‚éB
         FragmentManager fm = this.getSupportFragmentManager();
 
         CalendarPagerAdapter adapter = new CalendarPagerAdapter(fm);
@@ -108,14 +96,14 @@ public class MainActivity extends AppCompatActivity {
         return list;
     }
 
-    //ã‚ªãƒ—ã‚·ãƒ§ãƒ³ãƒ¡ãƒ‹ãƒ¥ãƒ¼ï¼ˆæœªè¨­å®šï¼‰
+    //ƒIƒvƒVƒ‡ƒ“ƒƒjƒ…[i–¢İ’èj
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
 
-    //ã‚ªãƒ—ã‚·ãƒ§ãƒ³ãƒ¡ãƒ‹ãƒ¥ãƒ¼ã®é¸æŠï¼ˆæœªè¨­å®šï¼‰
+    //ƒIƒvƒVƒ‡ƒ“ƒƒjƒ…[‚Ì‘I‘ği–¢İ’èj
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long

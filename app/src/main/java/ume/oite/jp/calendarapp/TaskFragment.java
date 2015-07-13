@@ -34,38 +34,38 @@ import java.util.Locale;
 
 
 /************************************************************
- * Task_Fragmentã‚¯ãƒ©ã‚¹<br>
+ * Task_FragmentƒNƒ‰ƒX<br>
  * <br>
- * ã‚¿ã‚¹ã‚¯ã‚’ãƒªã‚¹ãƒˆã¨ã—ã¦è¡¨ç¤ºã™ã‚‹ã€‚<br>
- * ListFragmentã‚¯ãƒ©ã‚¹ã‚’ç¶™æ‰¿ã—ã¦ã„ã‚‹ã€‚<br>
- * MainActivityã®ã‚¿ã‚¹ã‚¯ç·¨é›†ãƒ»å‰Šé™¤ã®ãƒ¡ã‚½ãƒƒãƒ‰ã‚’ä½¿ç”¨ã—ã¦ã„ã‚‹ã€‚<br>
+ * ƒ^ƒXƒN‚ğƒŠƒXƒg‚Æ‚µ‚Ä•\¦‚·‚éB<br>
+ * ListFragmentƒNƒ‰ƒX‚ğŒp³‚µ‚Ä‚¢‚éB<br>
+ * MainActivity‚Ìƒ^ƒXƒN•ÒWEíœ‚Ìƒƒ\ƒbƒh‚ğg—p‚µ‚Ä‚¢‚éB<br>
  *
  * @author FuyukiUmeta
  ************************************************************/
 public class TaskFragment extends ListFragment{
 
-    //ã‚¹ã‚±ã‚¸ãƒ¥ãƒ¼ãƒ«ã‚’ç®¡ç†ã™ã‚‹ãƒªã‚¹ãƒˆ
+    //ƒXƒPƒWƒ…[ƒ‹‚ğŠÇ—‚·‚éƒŠƒXƒg
     protected List<Schedule> list;
-    //ã‚¹ã‚±ã‚¸ãƒ¥ãƒ¼ãƒ«ã®ã‚¢ãƒ€ãƒ—ã‚¿
+    //ƒXƒPƒWƒ…[ƒ‹‚ÌƒAƒ_ƒvƒ^
     protected ArrayAdapter<Schedule> adapter;
 
     /************************************************************
-     * onActivityCreatedãƒ¡ã‚½ãƒƒãƒ‰<br>
-     * ãƒªã‚¹ãƒˆã‚’è¨­å®šã—ã€å„é …ç›®ã«ã‚¯ãƒªãƒƒã‚¯æ™‚ã«ãƒãƒƒãƒ—ã‚¢ãƒƒãƒ—ã‚’è¡¨ç¤ºã•ã›ã‚‹ã‚ˆã†ã«ã™ã‚‹ã€‚<br>
+     * onActivityCreatedƒƒ\ƒbƒh<br>
+     * ƒŠƒXƒg‚ğİ’è‚µAŠe€–Ú‚ÉƒNƒŠƒbƒN‚Éƒ|ƒbƒvƒAƒbƒv‚ğ•\¦‚³‚¹‚é‚æ‚¤‚É‚·‚éB<br>
      ************************************************************/
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
         this.setListView();
 
-        // ãƒªã‚¹ãƒˆã‚¯ãƒªãƒƒã‚¯ï¼ˆã‚³ãƒ”ãƒšï¼‰
+        // ƒŠƒXƒgƒNƒŠƒbƒNiƒRƒsƒyj
         getListView().setOnItemClickListener(new OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View v, int position ,long id) {
-                // é¸æŠã‚¢ã‚¤ãƒ†ãƒ ã®å–å¾—
+                // ‘I‘ğƒAƒCƒeƒ€‚Ìæ“¾
                 final Schedule listItem = adapter.getItem(position);
 
-                // ãƒãƒƒãƒ—ã‚¢ãƒƒãƒ—
+                // ƒ|ƒbƒvƒAƒbƒv
                 PopupMenu popupMenu = new PopupMenu(getActivity(), v);
                 popupMenu.inflate(R.menu.menu_popup);
                 popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
@@ -73,11 +73,11 @@ public class TaskFragment extends ListFragment{
                     public boolean onMenuItemClick(MenuItem item) {
                         switch (item.getItemId()) {
                             case R.id.mail_edit:
-                                // ç·¨é›†
+                                // •ÒW
                                 edit_item(listItem.getId(), listItem.getSchedule());
                                 break;
                             case R.id.mail_delete:
-                                // å‰Šé™¤
+                                // íœ
                                 delete_item(listItem.getId());
                                 break;
                             default:
@@ -92,25 +92,25 @@ public class TaskFragment extends ListFragment{
     }
 
     /************************************************************
-     * setListViewãƒ¡ã‚½ãƒƒãƒ‰<br>
-     * ãƒªã‚¹ãƒˆã‚’è¨­å®šã™ã‚‹ã€‚ï¼ˆã‚³ãƒ”ãƒšï¼‰<br>
+     * setListViewƒƒ\ƒbƒh<br>
+     * ƒŠƒXƒg‚ğİ’è‚·‚éBiƒRƒsƒyj<br>
      ************************************************************/
     public void setListView() {
 
-        //ç©ºã®ã‚¹ã‚±ã‚¸ãƒ¥ãƒ¼ãƒ«ãƒªã‚¹ãƒˆç”Ÿæˆ
+        //‹ó‚ÌƒXƒPƒWƒ…[ƒ‹ƒŠƒXƒg¶¬
         list = new ArrayList<Schedule>();
 
-        //èª­ã¿è¾¼ã¿å°‚ç”¨ãƒ‡ãƒ¼ã‚¿ãƒ™ãƒ¼ã‚¹ã®ç”¨æ„
+        //“Ç‚İ‚İê—pƒf[ƒ^ƒx[ƒX‚Ì—pˆÓ
         DatabaseHelper databaseHelper = new DatabaseHelper(getActivity());
         SQLiteDatabase db = databaseHelper.getReadableDatabase();
 
-        //SQLæ–‡ã®å®šç¾©
+        //SQL•¶‚Ì’è‹`
         String query = "SELECT * FROM Sample;";
 
-        //DBã‹ã‚‰ãƒ‡ãƒ¼ã‚¿ã‚’å–å¾—ã™ã‚‹ãŸã‚ã®ã‚«ãƒ¼ã‚½ãƒ«ã‚’ç”Ÿæˆ
+        //DB‚©‚çƒf[ƒ^‚ğæ“¾‚·‚é‚½‚ß‚ÌƒJ[ƒ\ƒ‹‚ğ¶¬
         Cursor c = db.rawQuery(query, null);
 
-        //ã‚«ãƒ¼ã‚½ãƒ«ã‹ã‚‰ãƒ‡ãƒ¼ã‚¿ã‚’å–å¾—ã—ã€ç©ºã®ã‚¹ã‚±ã‚¸ãƒ¥ãƒ¼ãƒ«ãƒªã‚¹ãƒˆã«è¿½åŠ ã—ã¦ã„ãã€‚
+        //ƒJ[ƒ\ƒ‹‚©‚çƒf[ƒ^‚ğæ“¾‚µA‹ó‚ÌƒXƒPƒWƒ…[ƒ‹ƒŠƒXƒg‚É’Ç‰Á‚µ‚Ä‚¢‚­B
         if (c.moveToFirst()) {
             do {
                 Schedule listItem = new Schedule();
@@ -124,7 +124,7 @@ public class TaskFragment extends ListFragment{
         }
         c.close();
 
-        // ã‚¢ãƒ€ãƒ—ã‚¿ãƒ¼ã®ã‚»ãƒƒãƒˆ
+        // ƒAƒ_ƒvƒ^[‚ÌƒZƒbƒg
         adapter = new ListAdapter(getActivity(), list);
         setListAdapter(adapter);
     }
@@ -141,9 +141,9 @@ public class TaskFragment extends ListFragment{
     }
 
     /************************************************************
-     * ListAdapterã‚¯ãƒ©ã‚¹<br>
+     * ListAdapterƒNƒ‰ƒX<br>
      * <br>
-     * Adapteré–¢é€£ã‚’å‹‰å¼·ä¸­ï¼ˆã‚³ãƒ”ãƒšï¼‰<br>
+     * AdapterŠÖ˜A‚ğ•×‹­’†iƒRƒsƒyj<br>
      *
      * @author FuyukiUmeta
      ************************************************************/
@@ -180,7 +180,7 @@ public class TaskFragment extends ListFragment{
 
             //holder.tvName.setText(c.get(Calendar.YEAR)+"/"+(c.get(Calendar.MONTH)+1)+"/"+c.get(Calendar.DATE)+" "+String.valueOf(item.getSchedule()));
             holder.date_text.setText(year+"/"+String.format("%02d",month)+"/"+String.format("%02d",date)+
-                    " ["+String.format("%02d",bhour)+":"+String.format("%02d",bminute)+"ï½"+String.format("%02d",ehour)+":"+String.format("%02d",eminute)+"] ");
+                    " ["+String.format("%02d",bhour)+":"+String.format("%02d",bminute)+"`"+String.format("%02d",ehour)+":"+String.format("%02d",eminute)+"] ");
             holder.name_text.setText(String.valueOf(item.getSchedule()));
 
             return convertView;
@@ -193,33 +193,33 @@ public class TaskFragment extends ListFragment{
         SQLiteDatabase db = databaseHelper.getWritableDatabase();
         db.delete("Sample", "_id = " + id, null);
 
-        Toast.makeText(this.getActivity(), "ãƒ‡ãƒ¼ã‚¿ã‚’å‰Šé™¤ã—ã¾ã—ãŸã€‚", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this.getActivity(), "ƒf[ƒ^‚ğíœ‚µ‚Ü‚µ‚½B", Toast.LENGTH_SHORT).show();
 
         this.setListView();
     }
     void edit_item(final int id,String name){
-        // å…¥åŠ›ç”¨EditText
+        // “ü—Í—pEditText
         final EditText editText = new EditText(this.getActivity());
         editText.setText(name);
 
-        // ãƒ€ã‚¤ã‚¢ãƒ­ã‚°ã®è¡¨ç¤º
-        // app_name:ãƒ€ã‚¤ã‚¢ãƒ­ã‚°ã®ã‚¿ã‚¤ãƒˆãƒ« ; dialog_message:ãƒ€ã‚¤ã‚¢ãƒ­ã‚°ã®èª¬æ˜æ–‡
-        EditTextDialog dialogFragment = EditTextDialog.newInstance("äºˆå®šå¤‰æ›´","äºˆå®šã‚’å¤‰æ›´ã—ã¾ã™ã€‚");
+        // ƒ_ƒCƒAƒƒO‚Ì•\¦
+        // app_name:ƒ_ƒCƒAƒƒO‚Ìƒ^ƒCƒgƒ‹ ; dialog_message:ƒ_ƒCƒAƒƒO‚Ìà–¾•¶
+        EditTextDialog dialogFragment = EditTextDialog.newInstance("—\’è•ÏX","—\’è‚ğ•ÏX‚µ‚Ü‚·B");
 
-        // ãƒ€ã‚¤ã‚¢ãƒ­ã‚°ã®OKãƒœã‚¿ãƒ³ã®ãƒªã‚¹ãƒŠ
-        //ã€€ã€€ãƒœã‚¿ãƒ³ã‚’æŠ¼ã™ã¨ãƒ‡ãƒ¼ã‚¿ãƒ™ãƒ¼ã‚¹ã«ã‚¢ã‚¯ã‚»ã‚¹ã—ã€
+        // ƒ_ƒCƒAƒƒO‚ÌOKƒ{ƒ^ƒ“‚ÌƒŠƒXƒi
+        //@@ƒ{ƒ^ƒ“‚ğ‰Ÿ‚·‚Æƒf[ƒ^ƒx[ƒX‚ÉƒAƒNƒZƒX‚µA
         dialogFragment.setOnOkClickListener(new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int which) {
-                // é …ç›®ã®ã‚»ãƒƒãƒˆ
+                // €–Ú‚ÌƒZƒbƒg
                 ContentValues values = new ContentValues();
                 values.put("Schedule", editText.getText().toString());
 
-                // ãƒ‡ãƒ¼ã‚¿ã®ç·¨é›†
+                // ƒf[ƒ^‚Ì•ÒW
                 DatabaseHelper databaseHelper = new DatabaseHelper(getActivity());
                 SQLiteDatabase db = databaseHelper.getWritableDatabase();
                 db.update("Sample", values, "_id = " + id, null);
 
-                Toast.makeText(getActivity(), "ãƒ‡ãƒ¼ã‚¿ã‚’ç·¨é›†ã—ã¾ã—ãŸã€‚", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), "ƒf[ƒ^‚ğ•ÒW‚µ‚Ü‚µ‚½B", Toast.LENGTH_SHORT).show();
 
                 setListView();
             }
@@ -230,9 +230,9 @@ public class TaskFragment extends ListFragment{
 
 
     /************************************************************
-     *ã€€ViewHolderã‚¯ãƒ©ã‚¹<br>
+     *@ViewHolderƒNƒ‰ƒX<br>
      * <br>
-     * Adapteré–¢é€£ã‚’å‹‰å¼·ä¸­ï¼ˆã‚³ãƒ”ãƒšï¼‰<br>
+     * AdapterŠÖ˜A‚ğ•×‹­’†iƒRƒsƒyj<br>
      *
      * @author FuyukiUmeta
      ************************************************************/
@@ -243,9 +243,9 @@ public class TaskFragment extends ListFragment{
 
 
     /************************************************************
-     * Scheduleã‚¯ãƒ©ã‚¹<br>
+     * ScheduleƒNƒ‰ƒX<br>
      * <br>
-     * å„ã‚¿ã‚¹ã‚¯ã®ãƒ‡ãƒ¼ã‚¿ã‚’æ‰€æŒã™ã‚‹ã€‚DBã®è¦ç´ ã¨åŒã˜ã«ã™ã‚‹ã€‚<br>
+     * Šeƒ^ƒXƒN‚Ìƒf[ƒ^‚ğŠ‚·‚éBDB‚Ì—v‘f‚Æ“¯‚¶‚É‚·‚éB<br>
      *
      * @author FuyukiUmeta
      ************************************************************/
@@ -255,7 +255,7 @@ public class TaskFragment extends ListFragment{
         private Date beginTime = new Date();
         private Date endTime   = new Date();
         private String schedule= "";
-        //æ—¥ä»˜ãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆ
+        //“ú•tƒtƒH[ƒ}ƒbƒg
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.JAPANESE);
         SimpleDateFormat stf = new SimpleDateFormat("HH:mm",Locale.JAPANESE);
 

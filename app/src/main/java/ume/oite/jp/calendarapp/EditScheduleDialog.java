@@ -26,7 +26,7 @@ public class EditScheduleDialog extends DialogFragment{
 
     private Date date = null;
     private SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd", Locale.JAPANESE);
-    private SimpleDateFormat sdf2 = new SimpleDateFormat("yyyyå¹´MMæœˆddæ—¥",Locale.JAPANESE);
+    private SimpleDateFormat sdf2 = new SimpleDateFormat("yyyy”NMMŒdd“ú",Locale.JAPANESE);
 
     private TimePicker beginTimePicker = null;
     private TimePicker endTimePicker = null;
@@ -61,22 +61,22 @@ public class EditScheduleDialog extends DialogFragment{
 
         builder.setView(content);
 
-        builder.setMessage(sdf2.format(date)+"ã«äºˆå®šè¿½åŠ ")
-                .setNegativeButton("é–‰ã˜ã‚‹", new DialogInterface.OnClickListener() {
+        builder.setMessage(sdf2.format(date)+"‚É—\’è’Ç‰Á")
+                .setNegativeButton("•Â‚¶‚é", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         // User cancelled the dialog
                     }
                 });
-        builder.setPositiveButton("ç™»éŒ²",new DialogInterface.OnClickListener() {
+        builder.setPositiveButton("“o˜^",new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface arg0, int arg1) {
-                // é …ç›®ã®ã‚»ãƒƒãƒˆ
+                // €–Ú‚ÌƒZƒbƒg
                 ContentValues values = new ContentValues();
                 values.put("Schedule", editText.getText().toString());
                 values.put("Date",sdf1.format(date));
                 values.put("BeginTime",beginTimePicker.getCurrentHour()+":"+beginTimePicker.getCurrentMinute());
                 values.put("EndTime",endTimePicker.getCurrentHour()+":"+endTimePicker.getCurrentMinute());
 
-                // ãƒ‡ãƒ¼ã‚¿ã®ç·¨é›†
+                // ƒf[ƒ^‚Ì•ÒW
                 DatabaseHelper databaseHelper = new DatabaseHelper(nowActivity);
                 SQLiteDatabase db = databaseHelper.getWritableDatabase();
                 db.insert("Sample",null,values);

@@ -9,16 +9,16 @@ import android.graphics.Color;
 import java.util.Calendar;
 
 /************************************************************
- * CalendarColorã‚¯ãƒ©ã‚¹<br>
+ * CalendarColorƒNƒ‰ƒX<br>
  * <br>
- * ã‚«ãƒ¬ãƒ³ãƒ€ãƒ¼ã®å„ã‚»ãƒ«ã®è‰²ã‚’å®šç¾©ã™ã‚‹ã€‚<br>
- * æ•°å­—è‰²ã€æ è‰²ã€æ å†…è‰²ãŒå®šç¾©ã•ã‚Œã¦ã„ã‚‹ã€‚<br>
- * Singletonãƒ‘ã‚¿ãƒ¼ãƒ³ã‚’é©ç”¨ã—ã¦ã„ã‚‹ã€‚ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã¯ãƒ—ãƒ­ã‚¸ã‚§ã‚¯ãƒˆã«ä¸€ã¤ã€‚<br>
+ * ƒJƒŒƒ“ƒ_[‚ÌŠeƒZƒ‹‚ÌF‚ğ’è‹`‚·‚éB<br>
+ * ”šFA˜gFA˜g“àF‚ª’è‹`‚³‚ê‚Ä‚¢‚éB<br>
+ * Singletonƒpƒ^[ƒ“‚ğ“K—p‚µ‚Ä‚¢‚éBƒCƒ“ƒXƒ^ƒ“ƒX‚ÍƒvƒƒWƒFƒNƒg‚Éˆê‚ÂB<br>
  * @author FuyukiUmeta
  ************************************************************/
 public class CalendarColor {
 
-    //Singletonãƒ‘ã‚¿ãƒ¼ãƒ³
+    //Singletonƒpƒ^[ƒ“
     private static CalendarColor instance;
     private CalendarColor(){}
     public static CalendarColor getInstance(){
@@ -28,8 +28,8 @@ public class CalendarColor {
 
 
     /************************************************************
-     * getNumberColorãƒ¡ã‚½ãƒƒãƒ‰<br>
-     * æ•°å­—è‰²ã®å®šç¾©<br>
+     * getNumberColorƒƒ\ƒbƒh<br>
+     * ”šF‚Ì’è‹`<br>
      ************************************************************/
     public int getNumberColor(Calendar calendar){
         switch(calendar.get(Calendar.DAY_OF_WEEK)){
@@ -40,8 +40,8 @@ public class CalendarColor {
     }
 
     /************************************************************
-     * getFrameColorãƒ¡ã‚½ãƒƒãƒ‰<br>
-     * æ è‰²ã®å®šç¾©<br>
+     * getFrameColorƒƒ\ƒbƒh<br>
+     * ˜gF‚Ì’è‹`<br>
      ************************************************************/
     public int getFrameColor(Calendar calendar){
         switch(calendar.get(Calendar.DAY_OF_WEEK)){
@@ -52,8 +52,8 @@ public class CalendarColor {
     }
 
     /************************************************************
-     * getBodyColorãƒ¡ã‚½ãƒƒãƒ‰<br>
-     * æ å†…è‰²ã®å®šç¾©<br>
+     * getBodyColorƒƒ\ƒbƒh<br>
+     * ˜g“àF‚Ì’è‹`<br>
      ************************************************************/
     public int getBodyColor(Calendar calendar){
         if(calendar.get(Calendar.MONTH)!=CalendarFragment.month-1)return Color.GRAY;

@@ -18,29 +18,23 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 
-/************************************************************
- * Cellã‚¯ãƒ©ã‚¹<br>
- * <br>
- * ã‚«ãƒ¬ãƒ³ãƒ€ãƒ¼ã®ã‚»ãƒ«ã‚’è¡¨ã™ã‚¯ãƒ©ã‚¹ã€‚<br>
- * TextViewã‚’æ‰€æŒã—ã€ã‚»ãƒ«ã¨ã—ã¦è¡¨ç¤ºã•ã›ã‚‹ã“ã¨ãŒã§ãã‚‹ã€‚<br>
- * @author FuyukiUmeta
- ************************************************************/
+//calendarcell
 public class CalendarCell implements OnTouchListener{
 
-    //ãƒ†ã‚­ã‚¹ãƒˆãƒ“ãƒ¥ãƒ¼
+    //ƒeƒLƒXƒgƒrƒ…[
     private TextView cell = null;
-    //æ—¥ä»˜ãƒ‡ãƒ¼ã‚¿
+    //“ú•tƒf[ƒ^
     private Date calendar = null;
-    //é€šå¸¸ãƒ»é¸æŠæ™‚ã®æ 
+    //’ÊíE‘I‘ğ‚Ì˜g
     private GradientDrawable normalDrawable=new GradientDrawable();
     private GradientDrawable selectDrawable=new GradientDrawable();
-    //ã‚«ãƒ¬ãƒ³ãƒ€ãƒ¼ã®è‰²æƒ…å ±
+    //ƒJƒŒƒ“ƒ_[‚ÌFî•ñ
     private CalendarColor color = CalendarColor.getInstance();
-    //è‡ªåˆ†ã®Managerã‚’ç™»éŒ²
+    //©•ª‚ÌManager‚ğ“o˜^
     private CellManager cellManager = null;
-    //è‡ªåˆ†ã®ã„ã‚‹Activity
+    //©•ª‚Ì‚¢‚éActivity
     private MainActivity nowActivity = null;
-    //æ—¥ä»˜ã®ãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆ
+    //“ú•t‚ÌƒtƒH[ƒ}ƒbƒg
     SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.JAPANESE);
 
     EditScheduleDialog editScheduleDialog = null;
@@ -49,8 +43,8 @@ public class CalendarCell implements OnTouchListener{
     private int task_num = 0;
 
     /************************************************************
-     * ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿<br>
-     * æ—¥ä»˜ã‚’å…¥æ‰‹<br>
+     * ƒRƒ“ƒXƒgƒ‰ƒNƒ^<br>
+     * “ú•t‚ğ“üè<br>
      ************************************************************/
     public CalendarCell(final Context c){
         cell = new TextView(c);
@@ -64,8 +58,8 @@ public class CalendarCell implements OnTouchListener{
     }
 
     /************************************************************
-     * ã‚«ãƒ¬ãƒ³ãƒ€ãƒ¼è¨­å®š<br>
-     * ä½¿ç”¨ã™ã‚‹æ—¥ä»˜ã«è¨­å®šã•ã‚ŒãŸã‚«ãƒ¬ãƒ³ãƒ€ãƒ¼ã‚’å–å¾—<br>
+     * ƒJƒŒƒ“ƒ_[İ’è<br>
+     * g—p‚·‚é“ú•t‚Éİ’è‚³‚ê‚½ƒJƒŒƒ“ƒ_[‚ğæ“¾<br>
      ************************************************************/
     public void setCalendar(final Calendar calendar){
         this.calendar=calendar.getTime();
@@ -74,8 +68,8 @@ public class CalendarCell implements OnTouchListener{
     }
 
     /************************************************************
-     * ã‚»ãƒ«ãƒãƒãƒ¼ã‚¸ãƒ£è¨­å®š<br>
-     * è‡ªåˆ†ã‚’ç™»éŒ²ã•ã›ã‚‹1ã¤ã®ã‚»ãƒ«ãƒãƒãƒ¼ã‚¸ãƒ£ã‚’ç™»éŒ²ã™ã‚‹ã€‚<br>
+     * ƒZƒ‹ƒ}ƒl[ƒWƒƒİ’è<br>
+     * ©•ª‚ğ“o˜^‚³‚¹‚é1‚Â‚ÌƒZƒ‹ƒ}ƒl[ƒWƒƒ‚ğ“o˜^‚·‚éB<br>
      ************************************************************/
     public void setCellManager(CellManager cellManager){
         this.cellManager=cellManager;
@@ -83,9 +77,9 @@ public class CalendarCell implements OnTouchListener{
     }
 
     /************************************************************
-     * å„ç¨®è¨­å®š<br>
-     * ã‚»ãƒ«ã®å„è¨­å®šã‚’ã™ã‚‹ã€‚<br>
-     * Drawableã®å„è¨­å®šã‚’ã™ã‚‹ã€‚<br>
+     * Šeíİ’è<br>
+     * ƒZƒ‹‚ÌŠeİ’è‚ğ‚·‚éB<br>
+     * Drawable‚ÌŠeİ’è‚ğ‚·‚éB<br>
      ************************************************************/
     public void setting(Calendar calendar){
         if(calendar!=null){
@@ -102,8 +96,8 @@ public class CalendarCell implements OnTouchListener{
     }
 
     /************************************************************
-     * Drawableå¤‰æ›´<br>
-     * ã‚»ãƒ«ã®Drawableã‚’é¸æŠçŠ¶æ…‹ã«å¿œã˜ã¦å¤‰æ›´ã‚’ã™ã‚‹ã€‚<br>
+     * Drawable•ÏX<br>
+     * ƒZƒ‹‚ÌDrawable‚ğ‘I‘ğó‘Ô‚É‰‚¶‚Ä•ÏX‚ğ‚·‚éB<br>
      ************************************************************/
     public void changeDrawable(){
         if(cell.getBackground()==normalDrawable){
@@ -114,8 +108,8 @@ public class CalendarCell implements OnTouchListener{
     }
 
     /************************************************************
-     * ã‚¿ãƒƒãƒãƒªã‚¹ãƒŠ<br>
-     * ã‚¿ãƒƒãƒã•ã‚ŒãŸæ™‚ã®å‡¦ç†ã€‚<br>
+     * ƒ^ƒbƒ`ƒŠƒXƒi<br>
+     * ƒ^ƒbƒ`‚³‚ê‚½‚Ìˆ—B<br>
      ************************************************************/
     public boolean onTouch(View v, MotionEvent event) {
         if(event.getActionMasked()==MotionEvent.ACTION_DOWN){
