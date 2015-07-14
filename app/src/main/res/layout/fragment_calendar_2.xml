@@ -21,7 +21,8 @@
             android:id="@+id/dow1"
             android:background="@drawable/background_shape_default"
             android:layout_gravity="center_horizontal"
-            android:layout_weight="1">
+            android:layout_weight="1"
+            android:measureWithLargestChild="false">
 
             <TextView
                 android:layout_width="match_parent"
@@ -30,7 +31,10 @@
                 android:id="@+id/Sunday"
                 android:gravity="center"
                 android:layout_gravity="center"
-                android:autoText="false" />
+                android:autoText="false"
+                android:textSize="10dp"
+                android:layout_margin="0dp"
+                android:textColor="#dd0000" />
         </LinearLayout>
 
         <LinearLayout
@@ -41,7 +45,8 @@
             android:focusable="false"
             android:focusableInTouchMode="false"
             android:id="@+id/dow2"
-            android:background="@drawable/background_shape_default" >
+            android:background="@drawable/background_shape_default"
+            android:measureWithLargestChild="false">
 
             <TextView
                 android:layout_width="match_parent"
@@ -49,7 +54,10 @@
                 android:text="月"
                 android:id="@+id/Monday"
                 android:gravity="center"
-                android:layout_gravity="center" />
+                android:layout_gravity="center"
+                android:textSize="10dp"
+                android:layout_marginTop="-4dp"
+                android:layout_margin="0dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -60,7 +68,8 @@
             android:focusable="false"
             android:focusableInTouchMode="false"
             android:id="@+id/dow3"
-            android:background="@drawable/background_shape_default" >
+            android:background="@drawable/background_shape_default"
+            android:measureWithLargestChild="false">
 
             <TextView
                 android:layout_width="match_parent"
@@ -68,7 +77,10 @@
                 android:text="火"
                 android:id="@+id/Tuesday"
                 android:gravity="center"
-                android:layout_gravity="center" />
+                android:layout_gravity="center"
+                android:textSize="10dp"
+                android:layout_marginTop="-4dp"
+                android:layout_margin="0dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -79,7 +91,8 @@
             android:focusable="false"
             android:focusableInTouchMode="false"
             android:id="@+id/dow4"
-            android:background="@drawable/background_shape_default" >
+            android:background="@drawable/background_shape_default"
+            android:measureWithLargestChild="false">
 
             <TextView
                 android:layout_width="match_parent"
@@ -87,7 +100,10 @@
                 android:text="水"
                 android:id="@+id/Wednesday"
                 android:gravity="center"
-                android:layout_gravity="center" />
+                android:layout_gravity="center"
+                android:textSize="10dp"
+                android:layout_marginTop="-4dp"
+                android:layout_margin="0dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -98,7 +114,8 @@
             android:focusable="false"
             android:focusableInTouchMode="false"
             android:id="@+id/dow5"
-            android:background="@drawable/background_shape_default" >
+            android:background="@drawable/background_shape_default"
+            android:measureWithLargestChild="false">
 
             <TextView
                 android:layout_width="match_parent"
@@ -106,7 +123,10 @@
                 android:text="木"
                 android:id="@+id/Thursday"
                 android:gravity="center"
-                android:layout_gravity="center" />
+                android:layout_gravity="center"
+                android:textSize="10dp"
+                android:layout_marginTop="-4dp"
+                android:layout_margin="0dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -117,7 +137,8 @@
             android:focusable="false"
             android:focusableInTouchMode="false"
             android:id="@+id/dow6"
-            android:background="@drawable/background_shape_default" >
+            android:background="@drawable/background_shape_default"
+            android:measureWithLargestChild="false">
 
             <TextView
                 android:layout_width="match_parent"
@@ -125,7 +146,10 @@
                 android:text="金"
                 android:id="@+id/Friday"
                 android:gravity="center"
-                android:layout_gravity="center" />
+                android:layout_gravity="center"
+                android:textSize="10dp"
+                android:layout_marginTop="-4dp"
+                android:layout_margin="0dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -136,7 +160,8 @@
             android:focusable="false"
             android:focusableInTouchMode="false"
             android:id="@+id/dow7"
-            android:background="@drawable/background_shape_default" >
+            android:background="@drawable/background_shape_default"
+            android:measureWithLargestChild="false">
 
             <TextView
                 android:layout_width="match_parent"
@@ -144,7 +169,11 @@
                 android:text="土"
                 android:id="@+id/Saturday"
                 android:gravity="center"
-                android:layout_gravity="center" />
+                android:layout_gravity="center"
+                android:textSize="10dp"
+                android:layout_marginTop="-4dp"
+                android:layout_margin="0dp"
+                android:textColor="#0000dd" />
         </LinearLayout>
     </LinearLayout>
 
@@ -180,7 +209,8 @@
                 android:autoText="false"
                 android:singleLine="true"
                 android:layout_marginTop="-4dp"
-                android:layout_marginBottom="-4dp" />
+                android:layout_marginBottom="-4dp"
+                android:textColor="#dd0000" />
 
         </LinearLayout>
 
@@ -337,7 +367,8 @@
                 android:autoText="false"
                 android:singleLine="true"
                 android:layout_marginTop="-4dp"
-                android:layout_marginBottom="-4dp" />
+                android:layout_marginBottom="-4dp"
+                android:textColor="#0000dd" />
         </LinearLayout>
     </LinearLayout>
 
@@ -373,7 +404,8 @@
                 android:autoText="false"
                 android:singleLine="true"
                 android:layout_marginTop="-4dp"
-                android:layout_marginBottom="-4dp" />
+                android:layout_marginBottom="-4dp"
+                android:textColor="#dd0000" />
         </LinearLayout>
 
         <LinearLayout
@@ -529,7 +561,8 @@
                 android:autoText="false"
                 android:singleLine="true"
                 android:layout_marginTop="-4dp"
-                android:layout_marginBottom="-4dp" />
+                android:layout_marginBottom="-4dp"
+                android:textColor="#0000dd" />
         </LinearLayout>
     </LinearLayout>
 
@@ -565,7 +598,8 @@
                 android:autoText="false"
                 android:singleLine="true"
                 android:layout_marginTop="-4dp"
-                android:layout_marginBottom="-4dp" />
+                android:layout_marginBottom="-4dp"
+                android:textColor="#dd0000" />
         </LinearLayout>
 
         <LinearLayout
@@ -721,7 +755,8 @@
                 android:autoText="false"
                 android:singleLine="true"
                 android:layout_marginTop="-4dp"
-                android:layout_marginBottom="-4dp" />
+                android:layout_marginBottom="-4dp"
+                android:textColor="#0000dd" />
         </LinearLayout>
     </LinearLayout>
 
@@ -757,7 +792,8 @@
                 android:autoText="false"
                 android:singleLine="true"
                 android:layout_marginTop="-4dp"
-                android:layout_marginBottom="-4dp" />
+                android:layout_marginBottom="-4dp"
+                android:textColor="#dd0000" />
         </LinearLayout>
 
         <LinearLayout
@@ -913,7 +949,8 @@
                 android:autoText="false"
                 android:singleLine="true"
                 android:layout_marginTop="-4dp"
-                android:layout_marginBottom="-4dp" />
+                android:layout_marginBottom="-4dp"
+                android:textColor="#0000dd" />
         </LinearLayout>
     </LinearLayout>
 
@@ -949,7 +986,8 @@
                 android:autoText="false"
                 android:singleLine="true"
                 android:layout_marginTop="-4dp"
-                android:layout_marginBottom="-4dp" />
+                android:layout_marginBottom="-4dp"
+                android:textColor="#dd0000" />
         </LinearLayout>
 
         <LinearLayout
@@ -1105,7 +1143,8 @@
                 android:autoText="false"
                 android:singleLine="true"
                 android:layout_marginTop="-4dp"
-                android:layout_marginBottom="-4dp" />
+                android:layout_marginBottom="-4dp"
+                android:textColor="#0000dd" />
         </LinearLayout>
     </LinearLayout>
 
@@ -1141,7 +1180,8 @@
                 android:autoText="false"
                 android:singleLine="true"
                 android:layout_marginTop="-4dp"
-                android:layout_marginBottom="-4dp" />
+                android:layout_marginBottom="-4dp"
+                android:textColor="#dd0000" />
         </LinearLayout>
 
         <LinearLayout
@@ -1297,7 +1337,8 @@
                 android:autoText="false"
                 android:singleLine="true"
                 android:layout_marginTop="-4dp"
-                android:layout_marginBottom="-4dp" />
+                android:layout_marginBottom="-4dp"
+                android:textColor="#0000dd" />
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>

@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <color name="shape_default_stroke">#AAAAAA</color>
-    <color name="shape_default_solid">#EEEEEE</color>
-    <color name="shape_default_focused_stroke">#777777</color>
+    <color name="shape_default_stroke">#FCFCFC</color>
+    <color name="shape_default_solid">#FFFFFF</color>
+    <color name="shape_default_focused_stroke">#FCFCFC</color>
     <color name="shape_default_focused_solid">#AAEEAA</color>
+
+    <color name="shape_other_stroke">#DDDDDD</color>
+    <color name="shape_other_solid">#DDDDDD</color>
+    <color name="shape_other_focused_stroke">#DDDDDD</color>
+    <color name="shape_other_focused_solid">#88CC88</color>
 
 </resources>

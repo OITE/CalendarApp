@@ -1,17 +1,17 @@
 package ume.oite.jp.calendarapp;
 
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.util.SparseArrayCompat;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
 import java.util.ArrayList;
 import java.util.Calendar;
 
-public class MainActivity extends FragmentActivity {
+public class MainActivity extends AppCompatActivity {
 
 
     public static TaskFragment listFragment = new TaskFragment();

@@ -2,10 +2,10 @@ package ume.oite.jp.calendarapp;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.Calendar;
@@ -43,12 +43,14 @@ public class CalendarFragment extends Fragment{
         weeks[4] = (ViewGroup) calendarLayout.findViewById(R.id.week5);
         weeks[5] = (ViewGroup) calendarLayout.findViewById(R.id.week6);
 
-        Log.d("debug","week1="+weeks[0]);
-
         for(ViewGroup week : weeks){
+            if(calendar.get(Calendar.MONTH)>month && week==weeks[5]){
+                ((LinearLayout)calendarLayout).removeView(week);
+                break;
+            }
             for(int i=0;i<week.getChildCount();i++){
-                TextView tv = ((TextView)((ViewGroup)week.getChildAt(i)).getChildAt(0));
-                if(tv!=null)tv.setText(String.valueOf(calendar.get(Calendar.DATE)));
+                ((TextView)((ViewGroup)week.getChildAt(i)).getChildAt(0)).setText(String.valueOf(calendar.get(Calendar.DATE)));
+                if(calendar.get(Calendar.MONTH)!=month)week.getChildAt(i).setBackgroundResource(R.drawable.background_shape_other);
                 calendar.add(Calendar.DATE,+1);
             }
         }
