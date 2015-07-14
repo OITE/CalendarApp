@@ -2,73 +2,39 @@ package ume.oite.jp.calendarapp;
 
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.util.SparseArrayCompat;
-import android.support.v4.view.ViewPager;
+import android.support.v4.app.FragmentTabHost;
 import android.view.Menu;
 import android.view.MenuItem;
-
-import java.util.ArrayList;
-import java.util.Calendar;
+import android.widget.TabHost;
 
 public class MainActivity extends FragmentActivity {
 
-
-    public static TaskFragment listFragment = new TaskFragment();
-
-    CalendarFragment calendarFragment = new CalendarFragment();
-
-    ViewPager viewPager ;
+    CalendarPagerFragment calendarpagerFragment;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        viewPager = (ViewPager)this.findViewById(R.id.calendar_viewpager);
-        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
-            @Override
-            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-            }
+        FragmentTabHost tabHost = (FragmentTabHost)this.findViewById(android.R.id.tabhost);
+        tabHost.setup(this,getSupportFragmentManager(),R.id.container);
 
-            @Override
-            public void onPageSelected(int position) {
+        TabHost.TabSpec tabSpec1,tabSpec2;
 
-            }
+        tabSpec1 = tabHost.newTabSpec("tab1");
+        tabSpec1.setIndicator("tab1");
+        tabHost.addTab(tabSpec1,CalendarPagerFragment.class,null);
 
-            @Override
-            public void onPageScrollStateChanged(int state) {
-            }
-        });
-
-        FragmentManager fm = this.getSupportFragmentManager();
-
-        CalendarPagerAdapter adapter = new CalendarPagerAdapter(fm);
-        adapter.addAll(getDateList());
-
-        viewPager.setAdapter(adapter);
+        tabSpec2 = tabHost.newTabSpec("tab2");
+        tabSpec2.setIndicator("tab2");
+        tabHost.addTab(tabSpec2, BBSFragment.class, null);
 
     }
 
     protected void onResume(){
         super.onResume();
-        viewPager.setCurrentItem(1);
     }
 
-    private ArrayList<SparseArrayCompat<Integer>> getDateList(){
-        ArrayList<SparseArrayCompat<Integer>> list = new ArrayList<SparseArrayCompat<Integer>>();
 
-        Calendar c = Calendar.getInstance();
-        c.add(Calendar.MONTH,-3);
-
-        for(int i=0;i<3;i++){
-            SparseArrayCompat<Integer> item = new SparseArrayCompat<Integer>();
-            item.append(0,c.get(Calendar.YEAR));
-            item.append(1,c.get(Calendar.MONTH));
-            list.add(item);
-            c.add(Calendar.MONTH,+1);
-        }
-        return list;
-    }
 
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.

@@ -51,6 +51,7 @@ public class CalendarFragment extends Fragment{
             for(int i=0;i<week.getChildCount();i++){
                 ((TextView)((ViewGroup)week.getChildAt(i)).getChildAt(0)).setText(String.valueOf(calendar.get(Calendar.DATE)));
                 if(calendar.get(Calendar.MONTH)!=month)week.getChildAt(i).setBackgroundResource(R.drawable.background_shape_other);
+                if(Calendar.getInstance().get(Calendar.MONTH)==month && Calendar.getInstance().get(Calendar.YEAR)==year && Calendar.getInstance().get(Calendar.DATE)==calendar.get(Calendar.DATE))week.getChildAt(i).setBackgroundResource(R.drawable.background_shape_today);
                 calendar.add(Calendar.DATE,+1);
             }
         }

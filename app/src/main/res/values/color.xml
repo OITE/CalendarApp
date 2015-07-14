@@ -11,6 +11,11 @@
     <color name="shape_other_focused_stroke">#558855</color>
     <color name="shape_other_focused_solid">#88CC88</color>
 
+    <color name="shape_today_stroke">#DDDDDD</color>
+    <color name="shape_today_solid">#ffbbaa</color>
+    <color name="shape_today_focused_stroke">#558855</color>
+    <color name="shape_today_focused_solid">#cc5544</color>
+
     <color name="basic_background">#cc5544</color>
 
 </resources>
