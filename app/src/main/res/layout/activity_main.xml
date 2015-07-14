@@ -1,29 +1,38 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:tools="http://schemas.android.com/tools"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-tools:context=".MainActivity"
-android:orientation="vertical" >
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical" >
+
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="5"
+        android:background="@color/basic_background" />
 
     <android.support.v4.view.ViewPager
-    android:id="@+id/calendar_viewpager"
-    android:layout_width="fill_parent"
-    android:layout_height="wrap_content">
-    <android.support.v4.view.PagerTitleStrip
+        android:id="@+id/calendar_viewpager"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+        <android.support.v4.view.PagerTitleStrip
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            android:textColor="#FFFFFF"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:background="@color/basic_background" />
+    </android.support.v4.view.ViewPager>
+
+    <FrameLayout
+        android:id="@+id/contents_container"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="top"
-        android:background="#44cc66"
-        android:textColor="#FFFFFF"
-        android:paddingTop="10dp"
-        android:paddingBottom="10dp" />
-</android.support.v4.view.ViewPager>
+        android:layout_height="match_parent"
+        android:layout_weight="5"
+        android:background="@color/basic_background" />
 
-
-<FrameLayout
-    android:id="@+id/fragment_container2"
-    android:layout_width="match_parent"
-    android:layout_height="0dp"
-    android:layout_weight="0" />
 
 </LinearLayout>

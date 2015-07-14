@@ -1,17 +1,17 @@
 package ume.oite.jp.calendarapp;
 
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.util.SparseArrayCompat;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
 import java.util.ArrayList;
 import java.util.Calendar;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends FragmentActivity {
 
 
     public static TaskFragment listFragment = new TaskFragment();
@@ -24,31 +24,21 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //Button nextButton = (Button)this.findViewById(R.id.nextButton);
-        //Button prevButton = (Button)this.findViewById(R.id.prevButton);
-
-        /*
-        nextButton.setOnTouchListener(new OnTouchListener(){
-            public boolean onTouch(View v, MotionEvent event) {
-                if(event.getActionMasked()==MotionEvent.ACTION_DOWN){
-                    calendarFragment.updateCalendar(1);
-                    listFragment.setListView();
-                }
-                return true;
-            }
-        });
-        prevButton.setOnTouchListener(new OnTouchListener(){
-            public boolean onTouch(View v, MotionEvent event) {
-                if(event.getActionMasked()==MotionEvent.ACTION_DOWN){
-                    calendarFragment.updateCalendar(-1);
-                    listFragment.setListView();
-                }
-                return true;
-            }
-        });
-
-        */
         viewPager = (ViewPager)this.findViewById(R.id.calendar_viewpager);
+        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+            }
+        });
 
         FragmentManager fm = this.getSupportFragmentManager();
 
@@ -57,19 +47,20 @@ public class MainActivity extends AppCompatActivity {
 
         viewPager.setAdapter(adapter);
 
-        //FragmentTransaction ft = fm.beginTransaction();
-        //ft.add(R.id.fragment_container1, calendarFragment, "calendar_fragment");
-        //ft.add(R.id.fragment_container2, listFragment,"task_fragment");
-        //ft.commit();
+    }
+
+    protected void onResume(){
+        super.onResume();
+        viewPager.setCurrentItem(1);
     }
 
     private ArrayList<SparseArrayCompat<Integer>> getDateList(){
         ArrayList<SparseArrayCompat<Integer>> list = new ArrayList<SparseArrayCompat<Integer>>();
 
         Calendar c = Calendar.getInstance();
-        c.add(Calendar.YEAR,-1);
+        c.add(Calendar.MONTH,-3);
 
-        for(int i=0;i<36;i++){
+        for(int i=0;i<3;i++){
             SparseArrayCompat<Integer> item = new SparseArrayCompat<Integer>();
             item.append(0,c.get(Calendar.YEAR));
             item.append(1,c.get(Calendar.MONTH));
