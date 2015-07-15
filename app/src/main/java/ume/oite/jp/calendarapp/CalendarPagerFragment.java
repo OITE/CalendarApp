@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.util.SparseArrayCompat;
 import android.support.v4.view.ViewPager;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -33,6 +32,8 @@ public class CalendarPagerFragment extends Fragment {
         viewPager.setAdapter(adapter);
         viewPager.setCurrentItem(adapter.getCount() / 2);
 
+        adapter.notifyDataSetChanged();
+
         return calendarpagerLayout;
 
     }
@@ -43,7 +44,6 @@ public class CalendarPagerFragment extends Fragment {
         c.add(Calendar.MONTH, -num / 2);
 
         for(int i=0;i<num;i++){
-            Log.d("debug",""+i);
             SparseArrayCompat<Integer> item = new SparseArrayCompat<Integer>();
             item.append(0,c.get(Calendar.YEAR));
             item.append(1,c.get(Calendar.MONTH));

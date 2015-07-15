@@ -24,7 +24,7 @@
             android:ems="10"
             android:id="@+id/addressEdit"
             android:layout_weight="1"
-            android:text="157.112.191.51" />
+            android:text="uumee1234.webcrow.jp/bbs.php" />
     </LinearLayout>
 
     <LinearLayout

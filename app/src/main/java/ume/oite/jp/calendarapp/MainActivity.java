@@ -22,11 +22,11 @@ public class MainActivity extends FragmentActivity {
 
         tabSpec1 = tabHost.newTabSpec("tab1");
         tabSpec1.setIndicator("tab1");
-        tabHost.addTab(tabSpec1,CalendarPagerFragment.class,null);
+        tabHost.addTab(tabSpec1,BBSFragment.class,null);
 
         tabSpec2 = tabHost.newTabSpec("tab2");
         tabSpec2.setIndicator("tab2");
-        tabHost.addTab(tabSpec2, BBSFragment.class, null);
+        tabHost.addTab(tabSpec2, CalendarFragment.class, null);
 
     }
 
