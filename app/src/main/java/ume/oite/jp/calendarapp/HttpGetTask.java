@@ -1,37 +1,39 @@
 package ume.oite.jp.calendarapp;
 
+import android.app.Activity;
 import android.os.AsyncTask;
+import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.util.Log;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
-import java.io.BufferedWriter;
 import java.io.InputStreamReader;
-import java.io.OutputStream;
-import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.Set;
 
 /**
  * Created by Ume on 2015/07/16.
  */
-public class HttpGetTask extends AsyncTask<String,Void,Void> {
+public class HttpGetTask extends AsyncTask<String,Void,String> {
 
+    private Activity parentActivity = null;
     private HttpURLConnection connection = null;
-    Map params;
+    private Handler ui_handler = null;
+    private String returnString = "";
 
-
+    public HttpGetTask(Activity parentActivity , Handler ui_handler){
+        this.parentActivity = parentActivity;
+        this.ui_handler = ui_handler;
+    }
 
     @Override
-    protected Void doInBackground(String... ad) {
-        String ret = "";
+    protected String doInBackground(String... ad) {
         try{
 
-            String address = ad[0];
-            URL url = new URL("http://"+address);
+            returnString = "";
+            URL url = new URL("http://"+"uumee1234.webcrow.jp/getbbs.php");
 
             connection = (HttpURLConnection)url.openConnection();
             connection.setReadTimeout(10000);
@@ -40,43 +42,37 @@ public class HttpGetTask extends AsyncTask<String,Void,Void> {
             connection.setDoInput(true);
             connection.setDoOutput(true);
 
-            Log.d("debug", "hashmap");
-
-            OutputStream os = connection.getOutputStream();
-            BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(os,"UTF-8"));
-
-            Log.d("debug", "connect");
             connection.connect();
-
-            Log.d("debug","String");
-            StringBuilder result = new StringBuilder();
-            Set<Map.Entry<String,String>> set = params.entrySet();
-            Iterator<Map.Entry<String,String>> it = set.iterator();
-            while(it.hasNext()){
-                Map.Entry<String,String> e = it.next();
-                result.append(e.getKey() + "=" + e.getValue());
-                if(it.hasNext())result.append("&");
-            }
-            Log.d("debug", "" + result);
-            writer.write(result.toString());
-            writer.flush();
 
             BufferedInputStream in = new BufferedInputStream(connection.getInputStream());
             BufferedReader reader = new BufferedReader(new InputStreamReader(in));
-            ret = reader.readLine();
 
-            Log.d("debug",""+ret);
+            String str ="";
+            while((str = reader.readLine())!=null) {
+                returnString += (str + "\n");
+            }
 
-            writer.close();
-            os.close();
-
+            in.close();
+            reader.close();
+            connection.disconnect();
 
         }catch(Exception e){
             Log.d("Exception",e.toString());
-        }finally{
-            Log.d("debug","finnaly");
-            connection.disconnect();
         }
-        return null;
+        return returnString;
     }
+
+    @Override
+    protected void onPostExecute(String params) {
+        //dialog.dismiss();
+
+        Message message = new Message();
+        Bundle bundle = new Bundle();
+        bundle.putBoolean("http_get_success",true);
+        bundle.putString("http_response",params);
+        message.setData(bundle);
+
+        ui_handler.sendMessage(message);
+    }
+
 }

@@ -48,9 +48,9 @@ public class HttpPostTask extends AsyncTask<String,String,String> {
 
     @Override
     protected void onPreExecute(){
-        dialog = new ProgressDialog( parentActivity );
-        dialog.setMessage("通信中・・・");
-        dialog.show();
+        //dialog = new ProgressDialog( parentActivity );
+        //dialog.setMessage("通信中・・・");
+        //dialog.show();
     }
 
     @Override
@@ -103,7 +103,7 @@ public class HttpPostTask extends AsyncTask<String,String,String> {
 
     @Override
     protected void onPostExecute(String params) {
-        dialog.dismiss();
+        //dialog.dismiss();
 
         Message message = new Message();
         Bundle bundle = new Bundle();

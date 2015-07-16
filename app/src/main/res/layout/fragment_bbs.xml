@@ -68,22 +68,32 @@
             android:maxLength="100" />
     </LinearLayout>
 
-    <Button
+    <LinearLayout
+        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="送信"
-        android:id="@+id/bbsButton" />
+        android:layout_height="wrap_content">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="送信"
+            android:id="@+id/bbsButton"
+            android:layout_weight="1" />
+
+    </LinearLayout>
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/scrollView" >
+        android:id="@+id/bbsScroll" >
 
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:id="@+id/textLayout"></LinearLayout>
+            android:id="@+id/textLayout">
+
+        </LinearLayout>
     </ScrollView>
 
 </LinearLayout>

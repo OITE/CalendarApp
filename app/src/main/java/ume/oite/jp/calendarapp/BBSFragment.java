@@ -4,18 +4,17 @@ import android.app.Activity;
 import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
-
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
 
 /**
  * Created by Ume on 2015/07/14.
@@ -27,19 +26,20 @@ public class BBSFragment extends Fragment {
     EditText addressEdit,nameEdit,bodyEdit;
     LinearLayout textLayout ;
     Button bbsButton ;
+    ScrollView bbsScroll;
+    Handler handler = null;
 
     LinearLayout bbsTextLayout = null;
-
-    SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd(E) HH:mm:ss");
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         bbsLayout = inflater.inflate(R.layout.fragment_bbs, container, false);
         activity = this.getActivity();
 
-        bbsTextLayout = (LinearLayout)inflater.inflate(R.layout.bbs_text,null);
+        bbsTextLayout = (LinearLayout)inflater.inflate(R.layout.bbs_text, null);
 
         addressEdit = (EditText)bbsLayout.findViewById(R.id.addressEdit);
+        bbsScroll = (ScrollView)bbsLayout.findViewById(R.id.bbsScroll);
         nameEdit = (EditText)bbsLayout.findViewById(R.id.nameEdit);
         bodyEdit = (EditText)bbsLayout.findViewById(R.id.bodyEdit);
         textLayout = (LinearLayout)bbsLayout.findViewById(R.id.textLayout);
@@ -49,14 +49,13 @@ public class BBSFragment extends Fragment {
             public void onClick(View v) {
                 int index = 0;
                 String name = nameEdit.getText().toString();
-                if(name == "")name = "nanashi";
+                if (name == "") name = "nanashi";
                 String body = bodyEdit.getText().toString();
-                if(body == "")body = "no_body";
-                String date = sdf.format(Calendar.getInstance().getTime());
+                if (body.equals("")) body = "nobody";
                 String address = addressEdit.getText().toString();
                 HttpPostTask task = new HttpPostTask(
                         activity,
-                        new HttpPostHandler(){
+                        new HttpPostHandler() {
 
                             @Override
                             public void onPostCompleted(String response) {
@@ -69,21 +68,58 @@ public class BBSFragment extends Fragment {
                             }
                         }
                 );
-                task.setParam("index",String.valueOf(index));
+                task.setParam("index", String.valueOf(index));
                 task.setParam("name", name);
                 task.setParam("body", body);
-                task.setParam("date", date);
                 task.execute(address);
             }
         });
 
+        handler = new Handler(){
+            @Override
+            public void dispatchMessage(Message msg){
+                if(msg.what==1){
+                    updateBBS();
+                    handler.sendEmptyMessageDelayed(1,5*1000);
+                }else{
+                    super.dispatchMessage(msg);
+                }
+            }
+        };
+
+        handler.sendEmptyMessage(1);
+
         return bbsLayout;
     }
 
+    private void updateBBS(){
+        HttpGetTask getTask = new HttpGetTask(
+                activity,
+                new HttpGetHandler(){
+
+                    @Override
+                    public void onGetCompleted(String response) {
+                        String s[] = response.split("\n");
+                        int index = Integer.parseInt(s[0]);
+                        textLayout.removeAllViews();
+                        if(index - textLayout.getChildCount() > 0) {
+                            for (int i = index; i >= textLayout.getChildCount() + 1; i--) {
+                                addText(s[i]);
+                            }
+                        }
+                    }
+
+                    @Override
+                    public void onGetFailed(String response) {
+                    }
+                }
+        );
+        getTask.execute();
+    }
+
     private void addText(String text){
+
         String[] params = text.split("_");
-        Log.d("debug", params + "");
-        Calendar c = Calendar.getInstance();
 
         Context ctx = this.getActivity().getApplicationContext();
 
