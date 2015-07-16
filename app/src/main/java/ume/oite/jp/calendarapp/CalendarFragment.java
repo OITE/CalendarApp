@@ -14,7 +14,6 @@ public class CalendarFragment extends Fragment{
 
     private View calendarLayout = null;
     private Calendar calendar = Calendar.getInstance();
-    public static int year=0,month=0;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 

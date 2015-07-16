@@ -25,15 +25,12 @@ public class CalendarPagerFragment extends Fragment {
 
         calendarpagerLayout = inflater.inflate(R.layout.fragment_calendarpager,container,false);
 
-        adapter = new CalendarPagerAdapter(this.getActivity().getSupportFragmentManager());
+        adapter = new CalendarPagerAdapter(this.getChildFragmentManager());
         adapter.addAll(getDateList(11));
 
         viewPager = (ViewPager)calendarpagerLayout.findViewById(R.id.calendar_viewpager);
         viewPager.setAdapter(adapter);
-        viewPager.setCurrentItem(adapter.getCount() / 2-3);
-        viewPager.setCurrentItem(adapter.getCount() / 2-2);
-        viewPager.setCurrentItem(adapter.getCount() / 2-1);
-        viewPager.setCurrentItem(adapter.getCount() / 2-0);
+        viewPager.setCurrentItem(adapter.getCount() / 2);
 
         adapter.notifyDataSetChanged();
 
