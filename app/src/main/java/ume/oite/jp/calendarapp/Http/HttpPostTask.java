@@ -1,4 +1,4 @@
-package ume.oite.jp.calendarapp;
+package ume.oite.jp.calendarapp.Http;
 
 import android.app.Activity;
 import android.app.ProgressDialog;

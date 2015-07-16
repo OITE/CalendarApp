@@ -16,6 +16,11 @@ import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
+import ume.oite.jp.calendarapp.Http.HttpGetHandler;
+import ume.oite.jp.calendarapp.Http.HttpGetTask;
+import ume.oite.jp.calendarapp.Http.HttpPostHandler;
+import ume.oite.jp.calendarapp.Http.HttpPostTask;
+
 /**
  * Created by Ume on 2015/07/14.
  */

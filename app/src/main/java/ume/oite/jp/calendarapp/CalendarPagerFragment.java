@@ -30,7 +30,10 @@ public class CalendarPagerFragment extends Fragment {
 
         viewPager = (ViewPager)calendarpagerLayout.findViewById(R.id.calendar_viewpager);
         viewPager.setAdapter(adapter);
-        viewPager.setCurrentItem(adapter.getCount() / 2);
+        viewPager.setCurrentItem(adapter.getCount() / 2-3);
+        viewPager.setCurrentItem(adapter.getCount() / 2-2);
+        viewPager.setCurrentItem(adapter.getCount() / 2-1);
+        viewPager.setCurrentItem(adapter.getCount() / 2-0);
 
         adapter.notifyDataSetChanged();
 
