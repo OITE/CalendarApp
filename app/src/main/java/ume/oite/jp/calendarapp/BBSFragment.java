@@ -59,12 +59,12 @@ public class BBSFragment extends Fragment {
 
                             @Override
                             public void onPostCompleted(String response) {
-                                addText(response);
+                                updateBBS();
                             }
 
                             @Override
                             public void onPostFailed(String response) {
-                                addText(response);
+
                             }
                         }
                 );
@@ -92,6 +92,12 @@ public class BBSFragment extends Fragment {
         return bbsLayout;
     }
 
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        handler = null;
+    }
+
     private void updateBBS(){
         HttpGetTask getTask = new HttpGetTask(
                 activity,
@@ -103,7 +109,7 @@ public class BBSFragment extends Fragment {
                         int index = Integer.parseInt(s[0]);
                         textLayout.removeAllViews();
                         if(index - textLayout.getChildCount() > 0) {
-                            for (int i = index; i >= textLayout.getChildCount() + 1; i--) {
+                            for (int i = index; i >= 1; i--) {
                                 addText(s[i]);
                             }
                         }
