@@ -1,4 +1,4 @@
-package ume.oite.jp.calendarapp;
+package ume.oite.jp.calendarapp.Activity;
 
 import android.graphics.Color;
 import android.os.Bundle;
@@ -10,6 +10,11 @@ import android.widget.LinearLayout;
 import android.widget.TabHost;
 import android.widget.TextView;
 
+import ume.oite.jp.calendarapp.Fragment.BBSFragment;
+import ume.oite.jp.calendarapp.Fragment.CalendarPagerFragment;
+import ume.oite.jp.calendarapp.Fragment.Live2DFragment;
+import ume.oite.jp.calendarapp.R;
+
 public class MainActivity extends FragmentActivity {
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,7 +24,7 @@ public class MainActivity extends FragmentActivity {
         FragmentTabHost tabHost = (FragmentTabHost)this.findViewById(android.R.id.tabhost);
         tabHost.setup(this, getSupportFragmentManager(), R.id.container);
 
-        TabHost.TabSpec tabSpec1,tabSpec2;
+        TabHost.TabSpec tabSpec1,tabSpec2,tabSpec3;
 
         tabSpec1 = tabHost.newTabSpec("tab1");
         tabSpec1.setIndicator("BBS");
@@ -29,6 +34,11 @@ public class MainActivity extends FragmentActivity {
         tabSpec2.setIndicator("Calendar");
         tabHost.addTab(tabSpec2, CalendarPagerFragment.class, null);
 
+        tabSpec3 = tabHost.newTabSpec("tab3");
+        tabSpec3.setIndicator("live2D");
+        tabHost.addTab(tabSpec3, Live2DFragment.class, null);
+
+        //Changing Color of Text in Tabs .
         ((TextView)((LinearLayout)tabHost.getTabWidget().getChildAt(0)).getChildAt(1)).setTextColor(Color.WHITE);
         ((TextView)((LinearLayout)tabHost.getTabWidget().getChildAt(1)).getChildAt(1)).setTextColor(Color.WHITE);
 

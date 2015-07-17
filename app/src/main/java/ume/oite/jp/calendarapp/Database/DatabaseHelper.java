@@ -1,4 +1,4 @@
-package ume.oite.jp.calendarapp;
+package ume.oite.jp.calendarapp.Database;
 
 /**
  * Created by Ume on 2015/07/11.

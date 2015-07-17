@@ -1,4 +1,4 @@
-package ume.oite.jp.calendarapp;
+package ume.oite.jp.calendarapp.Fragment;
 
 import android.app.Activity;
 import android.content.Context;
@@ -20,6 +20,7 @@ import ume.oite.jp.calendarapp.Http.HttpGetHandler;
 import ume.oite.jp.calendarapp.Http.HttpGetTask;
 import ume.oite.jp.calendarapp.Http.HttpPostHandler;
 import ume.oite.jp.calendarapp.Http.HttpPostTask;
+import ume.oite.jp.calendarapp.R;
 
 /**
  * Created by Ume on 2015/07/14.

@@ -1,4 +1,4 @@
-package ume.oite.jp.calendarapp;
+package ume.oite.jp.calendarapp.Adapter;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -7,6 +7,8 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.util.SparseArrayCompat;
 
 import java.util.ArrayList;
+
+import ume.oite.jp.calendarapp.Fragment.CalendarFragment;
 
 /**
  * Created by Ume on 2015/07/12.
