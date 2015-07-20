@@ -1,10 +1,10 @@
 package ume.oite.jp.calendarapp.Adapter;
 
-import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.os.Bundle;
 import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.util.SparseArrayCompat;
+import android.util.SparseArray;
 
 import java.util.ArrayList;
 
@@ -15,11 +15,11 @@ import ume.oite.jp.calendarapp.Fragment.CalendarFragment;
  */
 public class CalendarPagerAdapter extends FragmentPagerAdapter {
 
-    private ArrayList<SparseArrayCompat<Integer>> dateList;
+    private ArrayList<SparseArray<Integer>> dateList;
 
     public CalendarPagerAdapter(FragmentManager fm){
         super(fm);
-        dateList = new ArrayList<SparseArrayCompat<Integer>>();
+        dateList = new ArrayList<SparseArray<Integer>>();
     }
 
     @Override
@@ -30,7 +30,7 @@ public class CalendarPagerAdapter extends FragmentPagerAdapter {
     @Override
     public Fragment getItem(int position) {
 
-        SparseArrayCompat<Integer> item = dateList.get(position);
+        SparseArray<Integer> item = dateList.get(position);
 
         Bundle bundle = new Bundle();
         bundle.putInt("page",position);
@@ -48,11 +48,11 @@ public class CalendarPagerAdapter extends FragmentPagerAdapter {
         return dateList.get(Position).get(0)+" / "+ (dateList.get(Position).get(1)+1);
     }
 
-    public void add(SparseArrayCompat<Integer> item){
+    public void add(SparseArray<Integer> item){
         dateList.add(item);
     }
 
-    public void addAll(ArrayList<SparseArrayCompat<Integer>> list){
+    public void addAll(ArrayList<SparseArray<Integer>> list){
         dateList.addAll(list);
     }
 

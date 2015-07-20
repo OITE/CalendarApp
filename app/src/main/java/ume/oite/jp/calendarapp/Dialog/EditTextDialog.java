@@ -1,15 +1,15 @@
 package ume.oite.jp.calendarapp.Dialog;
 
+import android.app.Dialog;
+import android.content.DialogInterface;
+import android.os.Bundle;
+import android.support.v4.app.DialogFragment;
+import android.support.v7.app.AlertDialog;
+import android.widget.EditText;
+
 /**
  * Created by Ume on 2015/07/11.
  */
-
-import android.app.AlertDialog;
-import android.app.Dialog;
-import android.support.v4.app.DialogFragment;
-import android.content.DialogInterface;
-import android.os.Bundle;
-import android.widget.EditText;
 
 
 public class EditTextDialog extends DialogFragment {
@@ -41,7 +41,6 @@ public class EditTextDialog extends DialogFragment {
                 .setView(this.editText)
                 .setPositiveButton("OK", this.okClickListener)
                 .setNegativeButton("Cancel", this.cancelClickListener);
-
         return builder.create();
     }
 
@@ -56,6 +55,5 @@ public class EditTextDialog extends DialogFragment {
     public void setEditText(EditText editText) {
         this.editText = editText;
     }
-
 
 }

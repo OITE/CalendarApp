@@ -21,10 +21,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         String sql = "CREATE TABLE Sample ("
                 + " _id INTEGER PRIMARY KEY AUTOINCREMENT,"
-                + " Date TEXT,"
+                + " Schedule TEXT,"
                 + " BeginTime TEXT,"
-                + " EndTime TEXT,"
-                + " Schedule TEXT"
+                + " EndTime TEXT"
                 + ");";
         db.execSQL(sql);
     }

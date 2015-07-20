@@ -39,8 +39,9 @@ public class MainActivity extends FragmentActivity {
         tabHost.addTab(tabSpec3, Live2DFragment.class, null);
 
         //Changing Color of Text in Tabs .
-        ((TextView)((LinearLayout)tabHost.getTabWidget().getChildAt(0)).getChildAt(1)).setTextColor(Color.WHITE);
-        ((TextView)((LinearLayout)tabHost.getTabWidget().getChildAt(1)).getChildAt(1)).setTextColor(Color.WHITE);
+        for(int i=0;i<tabHost.getTabWidget().getChildCount();i++){
+            ((TextView)((LinearLayout)tabHost.getTabWidget().getChildAt(i)).getChildAt(1)).setTextColor(Color.WHITE);
+        }
 
     }
 

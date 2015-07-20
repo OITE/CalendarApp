@@ -25,8 +25,6 @@ public class Live2DSurfaceView extends GLSurfaceView {
     public Live2DSurfaceView(Context context) {
         super(context);
 
-        Log.d("live2d", "SurfaceView constructor");
-
         renderer = new SampleGLRenderer();
         setRenderer(renderer);
 
@@ -43,14 +41,13 @@ public class Live2DSurfaceView extends GLSurfaceView {
         };
 
         public SampleGLRenderer() {
-            Log.d("live2d", "GLRenderer constructor");
+
         }
 
         @Override
         public void onSurfaceCreated(GL10 gl, EGLConfig config) {
             // initialize model
             try {
-                Log.d("live2d", "SurfaceCreated");
                 InputStream in1 = getContext().getAssets().open(MODEL_PATH);
                 live2Dmodel = Live2DModelAndroid.loadModel(in1);
                 in1.close();
@@ -67,7 +64,6 @@ public class Live2DSurfaceView extends GLSurfaceView {
 
         @Override
         public void onSurfaceChanged(GL10 gl, int width, int height) {
-            Log.d("live2d", "SurfaceChanged");
             gl.glViewport(0, 0, width, height);
             gl.glMatrixMode(GL10.GL_PROJECTION);
             gl.glLoadIdentity();
@@ -80,7 +76,6 @@ public class Live2DSurfaceView extends GLSurfaceView {
 
         @Override
         public void onDrawFrame(GL10 gl) {
-            Log.d("live2d", "DrawFrame");
             gl.glMatrixMode(GL10.GL_MODELVIEW);
             gl.glLoadIdentity();
             gl.glClear(GL10.GL_COLOR_BUFFER_BIT);

@@ -1,9 +1,9 @@
 package ume.oite.jp.calendarapp.Fragment;
 
-import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.util.SparseArrayCompat;
+import android.os.Bundle;
 import android.support.v4.view.ViewPager;
+import android.util.SparseArray;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -41,13 +41,13 @@ public class CalendarPagerFragment extends Fragment {
 
     }
 
-    private ArrayList<SparseArrayCompat<Integer>> getDateList(int num){
-        ArrayList<SparseArrayCompat<Integer>> list = new ArrayList<SparseArrayCompat<Integer>>();
+    private ArrayList<SparseArray<Integer>> getDateList(int num){
+        ArrayList<SparseArray<Integer>> list = new ArrayList<SparseArray<Integer>>();
         Calendar c = Calendar.getInstance();
         c.add(Calendar.MONTH, -num / 2);
 
         for(int i=0;i<num;i++){
-            SparseArrayCompat<Integer> item = new SparseArrayCompat<Integer>();
+            SparseArray<Integer> item = new SparseArray<Integer>();
             item.append(0,c.get(Calendar.YEAR));
             item.append(1,c.get(Calendar.MONTH));
             list.add(item);
