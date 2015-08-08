@@ -98,33 +98,33 @@ public class AddScheduleDialog extends DialogFragment {
 
     }
 
+    public void setOkClickListener(DialogInterface.OnClickListener listener){
+        this.okClickListener = listener;
+    }
+
     public void settingOkClickListener(){
-        this.okClickListener = new DialogInterface.OnClickListener() {
+        setOkClickListener(new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                database = dbHelper.getWritableDatabase();
-                ContentValues values = new ContentValues();
-                String schedule = scheduleEdit.getText().toString();
-                if(schedule.equals(""))schedule = "empty";
-                values.put("Schedule", schedule);
-                values.put("BeginTime",year+"-"+month+"-"+date+" 12:00:00");
-                values.put("EndTime", year + "-" + month + "-" + date + " 13:00:00");
-                database.insert("Sample", null, values);
-                database.close();
+                addSchedule();
             }
-        };
+        });
     }
 
     public void settingCancelClickListener(){
-        this.cancelClickListener = new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                database = dbHelper.getWritableDatabase();
-                database.execSQL("DELETE FROM Sample;");
-                database.execSQL("delete from sqlite_sequence where name='Sample'");
-                database.close();
-            }
-        };
+    }
+
+    public String addSchedule(){
+        database = dbHelper.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        String schedule = scheduleEdit.getText().toString();
+        if(schedule.equals(""))schedule = "empty";
+        values.put("Schedule", schedule);
+        values.put("BeginTime",year+"-"+month+"-"+date+"-12-00-00");
+        values.put("EndTime", year + "-" + month + "-" + date + "-13-00-00");
+        database.insert("Sample", null, values);
+        database.close();
+        return schedule;
     }
 
     public void settingDateListener(){
@@ -176,7 +176,7 @@ public class AddScheduleDialog extends DialogFragment {
     }
     private void addMonth(int value){
         Calendar c = Calendar.getInstance();
-        c.set(year,month-1,date);
+        c.set(year, month - 1, date);
         c.add(Calendar.MONTH, value);
         setCalendar(c);
         updateDateText();
@@ -237,6 +237,4 @@ public class AddScheduleDialog extends DialogFragment {
         cal.clear(Calendar.MILLISECOND);
         return cal;
     }
-
-
 }
