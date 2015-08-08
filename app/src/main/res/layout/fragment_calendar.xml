@@ -180,7 +180,7 @@
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_gravity="center_horizontal"
         android:layout_weight="1"
         android:id="@+id/week1"
@@ -196,7 +196,9 @@
             android:id="@+id/day11"
             android:background="@drawable/background_shape_default"
             android:clickable="true"
-            android:padding="-5dp">
+            android:layout_margin="0dp"
+            android:paddingTop="3dp"
+            android:paddingBottom="0dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -208,8 +210,6 @@
                 android:layout_gravity="center_horizontal"
                 android:autoText="false"
                 android:singleLine="true"
-                android:layout_marginTop="-4dp"
-                android:layout_marginBottom="-4dp"
                 android:textColor="#dd0000" />
 
         </LinearLayout>
@@ -224,7 +224,9 @@
             android:id="@+id/day12"
             android:background="@drawable/background_shape_default"
             android:clickable="true"
-            android:padding="-5dp">
+            android:layout_margin="0dp"
+            android:paddingTop="3dp"
+            android:paddingBottom="0dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -235,9 +237,7 @@
                 android:gravity="center_horizontal"
                 android:layout_gravity="center_horizontal"
                 android:autoText="false"
-                android:singleLine="true"
-                android:layout_marginTop="-4dp"
-                android:layout_marginBottom="-4dp" />
+                android:singleLine="true" />
         </LinearLayout>
 
         <LinearLayout
@@ -250,7 +250,9 @@
             android:id="@+id/day13"
             android:background="@drawable/background_shape_default"
             android:clickable="true"
-            android:padding="-5dp">
+            android:layout_margin="0dp"
+            android:paddingTop="3dp"
+            android:paddingBottom="0dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -261,9 +263,7 @@
                 android:gravity="center_horizontal"
                 android:layout_gravity="center_horizontal"
                 android:autoText="false"
-                android:singleLine="true"
-                android:layout_marginTop="-4dp"
-                android:layout_marginBottom="-4dp" />
+                android:singleLine="true" />
         </LinearLayout>
 
         <LinearLayout
@@ -276,7 +276,9 @@
             android:id="@+id/day14"
             android:background="@drawable/background_shape_default"
             android:clickable="true"
-            android:padding="-5dp">
+            android:layout_margin="0dp"
+            android:paddingTop="3dp"
+            android:paddingBottom="0dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -287,9 +289,7 @@
                 android:gravity="center_horizontal"
                 android:layout_gravity="center_horizontal"
                 android:autoText="false"
-                android:singleLine="true"
-                android:layout_marginTop="-4dp"
-                android:layout_marginBottom="-4dp" />
+                android:singleLine="true" />
         </LinearLayout>
 
         <LinearLayout
@@ -302,7 +302,9 @@
             android:id="@+id/day15"
             android:background="@drawable/background_shape_default"
             android:clickable="true"
-            android:padding="-5dp">
+            android:layout_margin="0dp"
+            android:paddingTop="3dp"
+            android:paddingBottom="0dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -313,9 +315,7 @@
                 android:gravity="center_horizontal"
                 android:layout_gravity="center_horizontal"
                 android:autoText="false"
-                android:singleLine="true"
-                android:layout_marginTop="-4dp"
-                android:layout_marginBottom="-4dp" />
+                android:singleLine="true" />
         </LinearLayout>
 
         <LinearLayout
@@ -328,7 +328,9 @@
             android:id="@+id/day16"
             android:background="@drawable/background_shape_default"
             android:clickable="true"
-            android:padding="-5dp">
+            android:layout_margin="0dp"
+            android:paddingTop="3dp"
+            android:paddingBottom="0dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -339,9 +341,7 @@
                 android:gravity="center_horizontal"
                 android:layout_gravity="center_horizontal"
                 android:autoText="false"
-                android:singleLine="true"
-                android:layout_marginTop="-4dp"
-                android:layout_marginBottom="-4dp" />
+                android:singleLine="true" />
         </LinearLayout>
 
         <LinearLayout
@@ -354,7 +354,9 @@
             android:id="@+id/day17"
             android:background="@drawable/background_shape_default"
             android:clickable="true"
-            android:padding="-5dp">
+            android:layout_margin="0dp"
+            android:paddingTop="3dp"
+            android:paddingBottom="0dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -366,8 +368,6 @@
                 android:layout_gravity="center_horizontal"
                 android:autoText="false"
                 android:singleLine="true"
-                android:layout_marginTop="-4dp"
-                android:layout_marginBottom="-4dp"
                 android:textColor="#0000dd" />
         </LinearLayout>
     </LinearLayout>
@@ -375,7 +375,7 @@
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_gravity="center_horizontal"
         android:layout_weight="1"
         android:id="@+id/week2"
@@ -391,7 +391,9 @@
             android:id="@+id/day21"
             android:background="@drawable/background_shape_default"
             android:clickable="true"
-            android:padding="-5dp">
+            android:layout_margin="0dp"
+            android:paddingTop="3dp"
+            android:paddingBottom="0dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -403,8 +405,6 @@
                 android:layout_gravity="center_horizontal"
                 android:autoText="false"
                 android:singleLine="true"
-                android:layout_marginTop="-4dp"
-                android:layout_marginBottom="-4dp"
                 android:textColor="#dd0000" />
         </LinearLayout>
 
@@ -418,7 +418,9 @@
             android:id="@+id/day22"
             android:background="@drawable/background_shape_default"
             android:clickable="true"
-            android:padding="-5dp">
+            android:layout_margin="0dp"
+            android:paddingTop="3dp"
+            android:paddingBottom="0dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -429,9 +431,7 @@
                 android:gravity="center_horizontal"
                 android:layout_gravity="center_horizontal"
                 android:autoText="false"
-                android:singleLine="true"
-                android:layout_marginTop="-4dp"
-                android:layout_marginBottom="-4dp" />
+                android:singleLine="true" />
         </LinearLayout>
 
         <LinearLayout
@@ -444,7 +444,9 @@
             android:id="@+id/day23"
             android:background="@drawable/background_shape_default"
             android:clickable="true"
-            android:padding="-5dp">
+            android:layout_margin="0dp"
+            android:paddingTop="3dp"
+            android:paddingBottom="0dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -455,9 +457,7 @@
                 android:gravity="center_horizontal"
                 android:layout_gravity="center_horizontal"
                 android:autoText="false"
-                android:singleLine="true"
-                android:layout_marginTop="-4dp"
-                android:layout_marginBottom="-4dp" />
+                android:singleLine="true" />
         </LinearLayout>
 
         <LinearLayout
@@ -470,7 +470,9 @@
             android:id="@+id/day24"
             android:background="@drawable/background_shape_default"
             android:clickable="true"
-            android:padding="-5dp">
+            android:layout_margin="0dp"
+            android:paddingTop="3dp"
+            android:paddingBottom="0dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -481,9 +483,7 @@
                 android:gravity="center_horizontal"
                 android:layout_gravity="center_horizontal"
                 android:autoText="false"
-                android:singleLine="true"
-                android:layout_marginTop="-4dp"
-                android:layout_marginBottom="-4dp" />
+                android:singleLine="true" />
         </LinearLayout>
 
         <LinearLayout
@@ -496,7 +496,9 @@
             android:id="@+id/day25"
             android:background="@drawable/background_shape_default"
             android:clickable="true"
-            android:padding="-5dp">
+            android:layout_margin="0dp"
+            android:paddingTop="3dp"
+            android:paddingBottom="0dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -507,9 +509,7 @@
                 android:gravity="center_horizontal"
                 android:layout_gravity="center_horizontal"
                 android:autoText="false"
-                android:singleLine="true"
-                android:layout_marginTop="-4dp"
-                android:layout_marginBottom="-4dp" />
+                android:singleLine="true" />
         </LinearLayout>
 
         <LinearLayout
@@ -522,7 +522,11 @@
             android:id="@+id/day26"
             android:background="@drawable/background_shape_default"
             android:clickable="true"
-            android:padding="-5dp">
+            android:paddingTop="3dp"
+            android:paddingRight="0dp"
+            android:paddingLeft="0dp"
+            android:layout_margin="0dp"
+            android:paddingBottom="0dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -534,8 +538,68 @@
                 android:layout_gravity="center_horizontal"
                 android:autoText="false"
                 android:singleLine="true"
-                android:layout_marginTop="-4dp"
-                android:layout_marginBottom="-4dp" />
+                android:layout_weight="1" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="梅田 Birthday"
+                android:id="@+id/textView4"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:background="#8723a300"
+                android:textSize="8dp"
+                android:layout_margin="0dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_weight="1"
+                android:gravity="left|center_vertical" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="誕生日"
+                android:id="@+id/textView2"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:gravity="left|center_vertical"
+                android:background="#8723a300"
+                android:textSize="8dp"
+                android:layout_margin="0dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_weight="1" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="誕生日"
+                android:id="@+id/textView3"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:gravity="left|center_vertical"
+                android:background="#8723a300"
+                android:textSize="8dp"
+                android:layout_margin="0dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_weight="1" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="誕生日"
+                android:id="@+id/textView5"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:gravity="left|center_vertical"
+                android:background="#8723a300"
+                android:textSize="8dp"
+                android:layout_margin="0dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_weight="1" />
+
         </LinearLayout>
 
         <LinearLayout
@@ -548,7 +612,9 @@
             android:id="@+id/day27"
             android:background="@drawable/background_shape_default"
             android:clickable="true"
-            android:padding="-5dp">
+            android:layout_margin="0dp"
+            android:paddingTop="3dp"
+            android:paddingBottom="0dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -560,8 +626,6 @@
                 android:layout_gravity="center_horizontal"
                 android:autoText="false"
                 android:singleLine="true"
-                android:layout_marginTop="-4dp"
-                android:layout_marginBottom="-4dp"
                 android:textColor="#0000dd" />
         </LinearLayout>
     </LinearLayout>
@@ -569,7 +633,7 @@
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_gravity="center_horizontal"
         android:layout_weight="1"
         android:id="@+id/week3"
@@ -585,7 +649,9 @@
             android:id="@+id/day31"
             android:background="@drawable/background_shape_default"
             android:clickable="true"
-            android:padding="-5dp">
+            android:layout_margin="0dp"
+            android:paddingTop="3dp"
+            android:paddingBottom="0dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -597,8 +663,6 @@
                 android:layout_gravity="center_horizontal"
                 android:autoText="false"
                 android:singleLine="true"
-                android:layout_marginTop="-4dp"
-                android:layout_marginBottom="-4dp"
                 android:textColor="#dd0000" />
         </LinearLayout>
 
@@ -612,7 +676,9 @@
             android:id="@+id/day32"
             android:background="@drawable/background_shape_default"
             android:clickable="true"
-            android:padding="-5dp">
+            android:layout_margin="0dp"
+            android:paddingTop="3dp"
+            android:paddingBottom="0dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -623,9 +689,7 @@
                 android:gravity="center_horizontal"
                 android:layout_gravity="center_horizontal"
                 android:autoText="false"
-                android:singleLine="true"
-                android:layout_marginTop="-4dp"
-                android:layout_marginBottom="-4dp" />
+                android:singleLine="true" />
         </LinearLayout>
 
         <LinearLayout
@@ -638,7 +702,9 @@
             android:id="@+id/day33"
             android:background="@drawable/background_shape_default"
             android:clickable="true"
-            android:padding="-5dp">
+            android:layout_margin="0dp"
+            android:paddingTop="3dp"
+            android:paddingBottom="0dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -649,9 +715,7 @@
                 android:gravity="center_horizontal"
                 android:layout_gravity="center_horizontal"
                 android:autoText="false"
-                android:singleLine="true"
-                android:layout_marginTop="-4dp"
-                android:layout_marginBottom="-4dp" />
+                android:singleLine="true" />
         </LinearLayout>
 
         <LinearLayout
@@ -664,7 +728,9 @@
             android:id="@+id/day34"
             android:background="@drawable/background_shape_default"
             android:clickable="true"
-            android:padding="-5dp">
+            android:layout_margin="0dp"
+            android:paddingTop="3dp"
+            android:paddingBottom="0dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -675,9 +741,7 @@
                 android:gravity="center_horizontal"
                 android:layout_gravity="center_horizontal"
                 android:autoText="false"
-                android:singleLine="true"
-                android:layout_marginTop="-4dp"
-                android:layout_marginBottom="-4dp" />
+                android:singleLine="true" />
         </LinearLayout>
 
         <LinearLayout
@@ -690,7 +754,9 @@
             android:id="@+id/day35"
             android:background="@drawable/background_shape_default"
             android:clickable="true"
-            android:padding="-5dp">
+            android:layout_margin="0dp"
+            android:paddingTop="3dp"
+            android:paddingBottom="0dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -701,9 +767,7 @@
                 android:gravity="center_horizontal"
                 android:layout_gravity="center_horizontal"
                 android:autoText="false"
-                android:singleLine="true"
-                android:layout_marginTop="-4dp"
-                android:layout_marginBottom="-4dp" />
+                android:singleLine="true" />
         </LinearLayout>
 
         <LinearLayout
@@ -716,7 +780,9 @@
             android:id="@+id/day36"
             android:background="@drawable/background_shape_default"
             android:clickable="true"
-            android:padding="-5dp">
+            android:layout_margin="0dp"
+            android:paddingTop="3dp"
+            android:paddingBottom="0dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -727,9 +793,7 @@
                 android:gravity="center_horizontal"
                 android:layout_gravity="center_horizontal"
                 android:autoText="false"
-                android:singleLine="true"
-                android:layout_marginTop="-4dp"
-                android:layout_marginBottom="-4dp" />
+                android:singleLine="true" />
         </LinearLayout>
 
         <LinearLayout
@@ -742,7 +806,9 @@
             android:id="@+id/day37"
             android:background="@drawable/background_shape_default"
             android:clickable="true"
-            android:padding="-5dp">
+            android:layout_margin="0dp"
+            android:paddingTop="3dp"
+            android:paddingBottom="0dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -754,8 +820,6 @@
                 android:layout_gravity="center_horizontal"
                 android:autoText="false"
                 android:singleLine="true"
-                android:layout_marginTop="-4dp"
-                android:layout_marginBottom="-4dp"
                 android:textColor="#0000dd" />
         </LinearLayout>
     </LinearLayout>
@@ -763,7 +827,7 @@
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_gravity="center_horizontal"
         android:layout_weight="1"
         android:id="@+id/week4"
@@ -779,7 +843,9 @@
             android:id="@+id/day41"
             android:background="@drawable/background_shape_default"
             android:clickable="true"
-            android:padding="-5dp">
+            android:layout_margin="0dp"
+            android:paddingTop="3dp"
+            android:paddingBottom="0dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -791,8 +857,6 @@
                 android:layout_gravity="center_horizontal"
                 android:autoText="false"
                 android:singleLine="true"
-                android:layout_marginTop="-4dp"
-                android:layout_marginBottom="-4dp"
                 android:textColor="#dd0000" />
         </LinearLayout>
 
@@ -806,7 +870,9 @@
             android:id="@+id/day42"
             android:background="@drawable/background_shape_default"
             android:clickable="true"
-            android:padding="-5dp">
+            android:layout_margin="0dp"
+            android:paddingTop="3dp"
+            android:paddingBottom="0dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -817,9 +883,7 @@
                 android:gravity="center_horizontal"
                 android:layout_gravity="center_horizontal"
                 android:autoText="false"
-                android:singleLine="true"
-                android:layout_marginTop="-4dp"
-                android:layout_marginBottom="-4dp" />
+                android:singleLine="true" />
         </LinearLayout>
 
         <LinearLayout
@@ -832,7 +896,9 @@
             android:id="@+id/day43"
             android:background="@drawable/background_shape_default"
             android:clickable="true"
-            android:padding="-5dp">
+            android:layout_margin="0dp"
+            android:paddingTop="3dp"
+            android:paddingBottom="0dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -843,9 +909,7 @@
                 android:gravity="center_horizontal"
                 android:layout_gravity="center_horizontal"
                 android:autoText="false"
-                android:singleLine="true"
-                android:layout_marginTop="-4dp"
-                android:layout_marginBottom="-4dp" />
+                android:singleLine="true" />
         </LinearLayout>
 
         <LinearLayout
@@ -858,7 +922,9 @@
             android:id="@+id/day44"
             android:background="@drawable/background_shape_default"
             android:clickable="true"
-            android:padding="-5dp">
+            android:layout_margin="0dp"
+            android:paddingTop="3dp"
+            android:paddingBottom="0dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -869,9 +935,7 @@
                 android:gravity="center_horizontal"
                 android:layout_gravity="center_horizontal"
                 android:autoText="false"
-                android:singleLine="true"
-                android:layout_marginTop="-4dp"
-                android:layout_marginBottom="-4dp" />
+                android:singleLine="true" />
         </LinearLayout>
 
         <LinearLayout
@@ -884,7 +948,9 @@
             android:id="@+id/day45"
             android:background="@drawable/background_shape_default"
             android:clickable="true"
-            android:padding="-5dp">
+            android:layout_margin="0dp"
+            android:paddingTop="3dp"
+            android:paddingBottom="0dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -895,9 +961,7 @@
                 android:gravity="center_horizontal"
                 android:layout_gravity="center_horizontal"
                 android:autoText="false"
-                android:singleLine="true"
-                android:layout_marginTop="-4dp"
-                android:layout_marginBottom="-4dp" />
+                android:singleLine="true" />
         </LinearLayout>
 
         <LinearLayout
@@ -910,7 +974,9 @@
             android:id="@+id/day46"
             android:background="@drawable/background_shape_default"
             android:clickable="true"
-            android:padding="-5dp">
+            android:layout_margin="0dp"
+            android:paddingTop="3dp"
+            android:paddingBottom="0dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -921,9 +987,7 @@
                 android:gravity="center_horizontal"
                 android:layout_gravity="center_horizontal"
                 android:autoText="false"
-                android:singleLine="true"
-                android:layout_marginTop="-4dp"
-                android:layout_marginBottom="-4dp" />
+                android:singleLine="true" />
         </LinearLayout>
 
         <LinearLayout
@@ -936,7 +1000,9 @@
             android:id="@+id/ady47"
             android:background="@drawable/background_shape_default"
             android:clickable="true"
-            android:padding="-5dp">
+            android:layout_margin="0dp"
+            android:paddingTop="3dp"
+            android:paddingBottom="0dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -948,8 +1014,6 @@
                 android:layout_gravity="center_horizontal"
                 android:autoText="false"
                 android:singleLine="true"
-                android:layout_marginTop="-4dp"
-                android:layout_marginBottom="-4dp"
                 android:textColor="#0000dd" />
         </LinearLayout>
     </LinearLayout>
@@ -957,7 +1021,7 @@
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_gravity="center_horizontal"
         android:layout_weight="1"
         android:id="@+id/week5"
@@ -973,7 +1037,9 @@
             android:id="@+id/day51"
             android:background="@drawable/background_shape_default"
             android:clickable="true"
-            android:padding="-5dp">
+            android:layout_margin="0dp"
+            android:paddingTop="3dp"
+            android:paddingBottom="0dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -985,8 +1051,6 @@
                 android:layout_gravity="center_horizontal"
                 android:autoText="false"
                 android:singleLine="true"
-                android:layout_marginTop="-4dp"
-                android:layout_marginBottom="-4dp"
                 android:textColor="#dd0000" />
         </LinearLayout>
 
@@ -1000,7 +1064,9 @@
             android:id="@+id/day52"
             android:background="@drawable/background_shape_default"
             android:clickable="true"
-            android:padding="-5dp">
+            android:layout_margin="0dp"
+            android:paddingTop="3dp"
+            android:paddingBottom="0dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -1011,9 +1077,7 @@
                 android:gravity="center_horizontal"
                 android:layout_gravity="center_horizontal"
                 android:autoText="false"
-                android:singleLine="true"
-                android:layout_marginTop="-4dp"
-                android:layout_marginBottom="-4dp" />
+                android:singleLine="true" />
         </LinearLayout>
 
         <LinearLayout
@@ -1026,7 +1090,9 @@
             android:id="@+id/day53"
             android:background="@drawable/background_shape_default"
             android:clickable="true"
-            android:padding="-5dp">
+            android:layout_margin="0dp"
+            android:paddingTop="3dp"
+            android:paddingBottom="0dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -1037,9 +1103,7 @@
                 android:gravity="center_horizontal"
                 android:layout_gravity="center_horizontal"
                 android:autoText="false"
-                android:singleLine="true"
-                android:layout_marginTop="-4dp"
-                android:layout_marginBottom="-4dp" />
+                android:singleLine="true" />
         </LinearLayout>
 
         <LinearLayout
@@ -1052,7 +1116,9 @@
             android:id="@+id/day54"
             android:background="@drawable/background_shape_default"
             android:clickable="true"
-            android:padding="-5dp">
+            android:layout_margin="0dp"
+            android:paddingTop="3dp"
+            android:paddingBottom="0dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -1063,9 +1129,7 @@
                 android:gravity="center_horizontal"
                 android:layout_gravity="center_horizontal"
                 android:autoText="false"
-                android:singleLine="true"
-                android:layout_marginTop="-4dp"
-                android:layout_marginBottom="-4dp" />
+                android:singleLine="true" />
         </LinearLayout>
 
         <LinearLayout
@@ -1078,7 +1142,9 @@
             android:id="@+id/day55"
             android:background="@drawable/background_shape_default"
             android:clickable="true"
-            android:padding="-5dp">
+            android:layout_margin="0dp"
+            android:paddingTop="3dp"
+            android:paddingBottom="0dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -1089,9 +1155,7 @@
                 android:gravity="center_horizontal"
                 android:layout_gravity="center_horizontal"
                 android:autoText="false"
-                android:singleLine="true"
-                android:layout_marginTop="-4dp"
-                android:layout_marginBottom="-4dp" />
+                android:singleLine="true" />
         </LinearLayout>
 
         <LinearLayout
@@ -1104,7 +1168,9 @@
             android:id="@+id/day56"
             android:background="@drawable/background_shape_default"
             android:clickable="true"
-            android:padding="-5dp">
+            android:layout_margin="0dp"
+            android:paddingTop="3dp"
+            android:paddingBottom="0dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -1115,9 +1181,7 @@
                 android:gravity="center_horizontal"
                 android:layout_gravity="center_horizontal"
                 android:autoText="false"
-                android:singleLine="true"
-                android:layout_marginTop="-4dp"
-                android:layout_marginBottom="-4dp" />
+                android:singleLine="true" />
         </LinearLayout>
 
         <LinearLayout
@@ -1130,7 +1194,9 @@
             android:id="@+id/day57"
             android:background="@drawable/background_shape_default"
             android:clickable="true"
-            android:padding="-5dp">
+            android:layout_margin="0dp"
+            android:paddingTop="3dp"
+            android:paddingBottom="0dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -1142,8 +1208,6 @@
                 android:layout_gravity="center_horizontal"
                 android:autoText="false"
                 android:singleLine="true"
-                android:layout_marginTop="-4dp"
-                android:layout_marginBottom="-4dp"
                 android:textColor="#0000dd" />
         </LinearLayout>
     </LinearLayout>
@@ -1151,7 +1215,7 @@
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_gravity="center_horizontal"
         android:layout_weight="1"
         android:id="@+id/week6"
@@ -1167,7 +1231,9 @@
             android:id="@+id/day61"
             android:background="@drawable/background_shape_default"
             android:clickable="true"
-            android:padding="-5dp">
+            android:layout_margin="0dp"
+            android:paddingTop="3dp"
+            android:paddingBottom="0dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -1179,8 +1245,6 @@
                 android:layout_gravity="center_horizontal"
                 android:autoText="false"
                 android:singleLine="true"
-                android:layout_marginTop="-4dp"
-                android:layout_marginBottom="-4dp"
                 android:textColor="#dd0000" />
         </LinearLayout>
 
@@ -1194,7 +1258,9 @@
             android:id="@+id/day62"
             android:background="@drawable/background_shape_default"
             android:clickable="true"
-            android:padding="-5dp">
+            android:layout_margin="0dp"
+            android:paddingTop="3dp"
+            android:paddingBottom="0dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -1205,9 +1271,7 @@
                 android:gravity="center_horizontal"
                 android:layout_gravity="center_horizontal"
                 android:autoText="false"
-                android:singleLine="true"
-                android:layout_marginTop="-4dp"
-                android:layout_marginBottom="-4dp" />
+                android:singleLine="true" />
         </LinearLayout>
 
         <LinearLayout
@@ -1220,7 +1284,9 @@
             android:id="@+id/day63"
             android:background="@drawable/background_shape_default"
             android:clickable="true"
-            android:padding="-5dp">
+            android:layout_margin="0dp"
+            android:paddingTop="3dp"
+            android:paddingBottom="0dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -1231,9 +1297,7 @@
                 android:gravity="center_horizontal"
                 android:layout_gravity="center_horizontal"
                 android:autoText="false"
-                android:singleLine="true"
-                android:layout_marginTop="-4dp"
-                android:layout_marginBottom="-4dp" />
+                android:singleLine="true" />
         </LinearLayout>
 
         <LinearLayout
@@ -1246,7 +1310,9 @@
             android:id="@+id/day64"
             android:background="@drawable/background_shape_default"
             android:clickable="true"
-            android:padding="-5dp">
+            android:layout_margin="0dp"
+            android:paddingTop="3dp"
+            android:paddingBottom="0dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -1257,9 +1323,7 @@
                 android:gravity="center_horizontal"
                 android:layout_gravity="center_horizontal"
                 android:autoText="false"
-                android:singleLine="true"
-                android:layout_marginTop="-4dp"
-                android:layout_marginBottom="-4dp" />
+                android:singleLine="true" />
         </LinearLayout>
 
         <LinearLayout
@@ -1272,7 +1336,9 @@
             android:id="@+id/day65"
             android:background="@drawable/background_shape_default"
             android:clickable="true"
-            android:padding="-5dp">
+            android:layout_margin="0dp"
+            android:paddingTop="3dp"
+            android:paddingBottom="0dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -1283,9 +1349,7 @@
                 android:gravity="center_horizontal"
                 android:layout_gravity="center_horizontal"
                 android:autoText="false"
-                android:singleLine="true"
-                android:layout_marginTop="-4dp"
-                android:layout_marginBottom="-4dp" />
+                android:singleLine="true" />
         </LinearLayout>
 
         <LinearLayout
@@ -1298,7 +1362,9 @@
             android:id="@+id/day66"
             android:background="@drawable/background_shape_default"
             android:clickable="true"
-            android:padding="-5dp">
+            android:layout_margin="0dp"
+            android:paddingTop="3dp"
+            android:paddingBottom="0dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -1309,9 +1375,7 @@
                 android:gravity="center_horizontal"
                 android:layout_gravity="center_horizontal"
                 android:autoText="false"
-                android:singleLine="true"
-                android:layout_marginTop="-4dp"
-                android:layout_marginBottom="-4dp" />
+                android:singleLine="true" />
         </LinearLayout>
 
         <LinearLayout
@@ -1324,7 +1388,9 @@
             android:id="@+id/day67"
             android:background="@drawable/background_shape_default"
             android:clickable="true"
-            android:padding="-5dp">
+            android:layout_margin="0dp"
+            android:paddingTop="3dp"
+            android:paddingBottom="0dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -1336,8 +1402,6 @@
                 android:layout_gravity="center_horizontal"
                 android:autoText="false"
                 android:singleLine="true"
-                android:layout_marginTop="-4dp"
-                android:layout_marginBottom="-4dp"
                 android:textColor="#0000dd" />
         </LinearLayout>
     </LinearLayout>

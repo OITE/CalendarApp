@@ -27,12 +27,12 @@ public class MainActivity extends FragmentActivity {
         TabHost.TabSpec tabSpec1,tabSpec2,tabSpec3;
 
         tabSpec1 = tabHost.newTabSpec("tab1");
-        tabSpec1.setIndicator("BBS");
-        tabHost.addTab(tabSpec1, BBSFragment.class, null);
+        tabSpec1.setIndicator("Calendar");
+        tabHost.addTab(tabSpec1, CalendarPagerFragment.class, null);
 
         tabSpec2 = tabHost.newTabSpec("tab2");
-        tabSpec2.setIndicator("Calendar");
-        tabHost.addTab(tabSpec2, CalendarPagerFragment.class, null);
+        tabSpec2.setIndicator("BBS");
+        tabHost.addTab(tabSpec2, BBSFragment.class, null);
 
         tabSpec3 = tabHost.newTabSpec("tab3");
         tabSpec3.setIndicator("live2D");

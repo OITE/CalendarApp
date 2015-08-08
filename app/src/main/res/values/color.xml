@@ -3,18 +3,18 @@
 
     <color name="shape_default_stroke">#FCFCFC</color>
     <color name="shape_default_solid">#FFFFFF</color>
-    <color name="shape_default_focused_stroke">#335533</color>
-    <color name="shape_default_focused_solid">#AAEEAA</color>
+    <color name="shape_default_focused_stroke">#11335533</color>
+    <color name="shape_default_focused_solid">#eeAAEEAA</color>
 
-    <color name="shape_other_stroke">#DDDDDD</color>
-    <color name="shape_other_solid">#DDDDDD</color>
-    <color name="shape_other_focused_stroke">#558855</color>
+    <color name="shape_other_stroke">#eeeeeeee</color>
+    <color name="shape_other_solid">#ddDDDDDD</color>
+    <color name="shape_other_focused_stroke">#11558855</color>
     <color name="shape_other_focused_solid">#88CC88</color>
 
     <color name="shape_today_stroke">#DDDDDD</color>
     <color name="shape_today_solid">#ffbbaa</color>
-    <color name="shape_today_focused_stroke">#558855</color>
-    <color name="shape_today_focused_solid">#cc5544</color>
+    <color name="shape_today_focused_stroke">#11558855</color>
+    <color name="shape_today_focused_solid">#cccc5544</color>
 
     <color name="basic_background">#cc5544</color>
 

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="梅田 Birthday"
+        android:id="@+id/textView"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:background="#8723a300"
+        android:textSize="8dp"
+        android:layout_margin="0dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginRight="2dp"
+        android:layout_weight="1"
+        android:textIsSelectable="true"
+        android:gravity="left|center_vertical"
+        android:layout_gravity="center_horizontal" />
+</LinearLayout>

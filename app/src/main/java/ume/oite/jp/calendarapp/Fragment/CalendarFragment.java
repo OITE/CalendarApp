@@ -36,8 +36,12 @@ public class CalendarFragment extends Fragment{
         return calendarLayout;
     }
 
+
+
+
     private void makeCalendar(int year,int month){
 
+        calendar.clear();
         calendar.set(year, month, 1);
 
         calendar.add(Calendar.DATE, -(calendar.get(Calendar.DAY_OF_WEEK) - 1));
@@ -51,10 +55,12 @@ public class CalendarFragment extends Fragment{
         weeks[5] = (ViewGroup) calendarLayout.findViewById(R.id.week6);
 
         for(ViewGroup week : weeks){
+
             if(calendar.get(Calendar.MONTH)>month && week==weeks[5]){
                 ((LinearLayout)calendarLayout).removeView(week);
                 break;
             }
+
             for(int i=0;i<week.getChildCount();i++){
 
                 ViewGroup dateGroup = (ViewGroup)week.getChildAt(i);
@@ -62,7 +68,7 @@ public class CalendarFragment extends Fragment{
 
                 dateView.setText(String.valueOf(calendar.get(Calendar.DATE)));
                 if(calendar.get(Calendar.MONTH)!=month)dateGroup.setBackgroundResource(R.drawable.background_shape_other);
-                if(Calendar.getInstance().get(Calendar.MONTH)==month && Calendar.getInstance().get(Calendar.YEAR)==year && Calendar.getInstance().get(Calendar.DATE)==calendar.get(Calendar.DATE))dateGroup.setBackgroundResource(R.drawable.background_shape_today);
+                if(this.isToday(calendar))dateGroup.setBackgroundResource(R.drawable.background_shape_today);
 
                 dateGroup.setOnTouchListener(new View.OnTouchListener() {
 
@@ -79,10 +85,8 @@ public class CalendarFragment extends Fragment{
                         }else{
                             if (event.getActionMasked() == MotionEvent.ACTION_DOWN) {
                                 Calendar c = Calendar.getInstance(); c.set(y,m,d);
-                                AddScheduleDialog dialog = AddScheduleDialog.getInstance(c);
-                                dialog.show(fm, "scheduleAdd");
+                                AddScheduleDialog.getInstance(c).show(fm, "scheduleAdd");
                             }
-
                         }
                         return true;
                     }
@@ -91,6 +95,19 @@ public class CalendarFragment extends Fragment{
                 calendar.add(Calendar.DATE, +1);
             }
         }
+    }
+
+
+    private boolean isToday(Calendar c) {
+        Calendar today = Calendar.getInstance();
+        if(c.get(Calendar.YEAR) == today.get(Calendar.YEAR)){
+            if(c.get(Calendar.MONTH) == today.get(Calendar.MONTH)){
+                if(c.get(Calendar.DATE) == today.get(Calendar.DATE)){
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 
 }
