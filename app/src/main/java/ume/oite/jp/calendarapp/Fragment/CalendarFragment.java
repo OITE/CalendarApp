@@ -92,6 +92,7 @@ public class CalendarFragment extends Fragment{
                     if(index>4)break;
                 }
 
+                //あいうえお生成
                 dateGroup.setOnTouchListener(new View.OnTouchListener() {
 
                     int y = calendar.get(Calendar.YEAR);
